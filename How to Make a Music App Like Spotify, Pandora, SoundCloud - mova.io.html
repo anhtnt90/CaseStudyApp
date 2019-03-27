@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://mova.io/blog/how-to-build-music-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script type="text/javascript" async="" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/analytics.js.download"></script><script async="" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/gtm.js.download"></script><script async="" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="Curious​ how to create a music streaming app, and how much it costs? Our developers explain how to make your own app like Spotify, Pandora, SoundCloud.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/how-to-build-music-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/how-to-build-music-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io">
+    <meta property="og:description" content="Curious​ how to create a music streaming app, and how much it costs? Our developers explain how to make your own app like Spotify, Pandora, SoundCloud.">
+    <meta property="og:url" content="https://mova.io/blog/how-to-build-music-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2018/11/1.jpg">
+    <meta property="article:published_time" content="2018-10-29T11:30:00.000Z">
+    <meta property="article:modified_time" content="2019-03-14T06:40:06.000Z">
+    <meta property="article:tag" content="how-to">
+    <meta property="article:tag" content="music">
+    <meta property="article:tag" content="mobile">
+    <meta property="article:tag" content="estimation">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io">
+    <meta name="twitter:description" content="Curious​ how to create a music streaming app, and how much it costs? Our developers explain how to make your own app like Spotify, Pandora, SoundCloud.">
+    <meta name="twitter:url" content="https://mova.io/blog/how-to-build-music-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2018/11/1.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="how-to, music, mobile, estimation">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1126">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io",
+    "url": "https://mova.io/blog/how-to-build-music-app/",
+    "datePublished": "2018-10-29T11:30:00.000Z",
+    "dateModified": "2019-03-14T06:40:06.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2018/11/1.jpg",
+        "width": 2000,
+        "height": 1126
+    },
+    "keywords": "how-to, music, mobile, estimation",
+    "description": "Curious​ how to create a music streaming app, and how much it costs? Our developers explain how to make your own app like Spotify, Pandora, SoundCloud.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/embed.js.download" data-timestamp="1553659540779"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><script src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-how-to-2 tag-music tag-mobile-2 tag-estimation" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">How to Create a Music Streaming App</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2018-10-29">29 Oct 2018</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2018/11/1.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-how-to-2 tag-music tag-mobile-2 tag-estimation">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>Curious how to create a music streaming app? We've got the answer! If you are interested which technologies you should use to build the app, how much time it can take, and how much can it cost - let's figure it out!</p>
+<p>As you might already noticed, these days people switched from local music libraries to streaming. I think you won't be able to find people who still listen to music locally.</p>
+<p>Streaming is much more comfortable than local libraries:</p>
+<ul>
+<li>You don't spend precious space on your phone or laptop</li>
+<li>It's cheaper: you don't need to buy all the music you would like to listen to</li>
+<li>It's faster: you have (almost) all the music you need in one app</li>
+</ul>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#tech">Tech Stack</a></li>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#auth">Registration and Authorization</a></li>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#search">Search</a></li>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#discover">Discover</a></li>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#player">Player</a></li>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#additional">Additional Features</a></li>
+<li><a href="https://mova.io/blog/how-to-build-music-app/#summary">Summary</a></li>
+</ol>
+<h2>How to Develop a Music Streaming App</h2>
+<p>First of all, let's think about possible sections that application might need:</p>
+<ul>
+<li>
+<p>Registration and authorization. It is an optional part, but it would help improve users engagement: they will be able to save tracks to their libraries, view their listening history, maybe some stats, and so on</p>
+</li>
+<li>
+<p>Search: this is the main part of the application, which will allow a user to search artists, albums and tracks. The easier it will be for a user to find what he wants, the better his experience will be.</p>
+</li>
+<li>
+<p>Discover: even though this is not the most important feature, it is something that every app should have to improve the user experience. After some time liting to the usual music, the user might want to find something new, and this is where Discover part will help. Using sophisticated AI algorithms, we can suggest user new artists and tracks to listen. We can check what other people with similar tastes are listing to, new releases, his friends' favorite tracks, and much more.</p>
+</li>
+<li>
+<p>Player. The core of the streaming application: plays the music, allows users to control it, "like" each track, view the queue, and more. If you want to create a music app like Pandora or others, you won't be able to do it without Player.</p>
+</li>
+<li>
+<p>Additional features: depending on the application type, we can add social sharing, offline mode, social integrations, and much more. If you are going to make a music app like SoundCloud, you might also need Uploading features. These features are not that difficult to implement, but will dramatically improve user's engagement.</p>
+</li>
+</ul>
+<p>If you would like to develop a similar audio streaming application or would like to develop something completely different - just write to us at <a href="mailto:mail@mova.io">mail@mova.io</a></p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     You might also be interested in another article where our developers sharing their knowledge: <a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/">how to create an event app.</a>
+</div>
+<h2><a name="tech">Tech Stack</a></h2>
+<p><img src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/1.jpg" alt="Streaming App - Tech"></p>
+<p>Let's first dive in, and try to understand how to make music app and what technologies we can use to make a streaming application. By default, every streaming app will have at least two sides: mobile application, user-facing side, back-end, and in some cases - Admin Panel.</p>
+<p>Sixty percent of the development will take the mobile application. Ideally, it should be a native mobile application, written in Swift for iOS, and in Kotlin or Java for Android.</p>
+<p>Basically, the mobile app will only fetch and display the data provided by the back-end, so all the heavy lifting will be done on a server. All the work with the database, authenticating users, searching tracks, suggesting new artists and updating user library - all the logic will be done on the server. The mobile app will only "ask" it to do some specific tasks.</p>
+<p>Technically, the streaming app can work with almost every back-end possible. We can make it work with Ruby on Rails or Node.js, Elixir, and Phoenix, or Go, whatever you will prefer. However, if the client will not have any strong preference, we would suggest going with Ruby on Rails. This choice will help us to make MVP (minimum viable product) much faster than with other frameworks and will be easier to maintain in the future. A large community of Ruby developers will be helpful here as well - this is a mature framework, that was used to create projects like Basecamp, Hulu,  Zendesk, Github, and much more.</p>
+<p>Admin panel will help project owners and admins managing everything. Adding new tracks, changing artists descriptions, managing users, updating pricing and plans, and much more. It is a good idea to start with fewer features in the admin panel, and add them when admins will really need them.</p>
+<p>Technically, admin panel can be done in multiple ways. Simple HTML pages generated by Ruby on Rails: it will be enough for admin in the very beginning. Depending on a budget and admin features, we can go with a more sophisticated tech, like Angular.js, React.js, or more. It will help make the admin interface faster and feel smoother.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     Our iOS developers worked on apps mentioned by The Washington Post and NY Times. If you need help developing a new and successful product, check our <a href="https://mova.io/services/ios/">iOS application development services</a> or send us a message: mail@mova.io
+</div>
+<h2><a name="auth">Registration and Authorization</a></h2>
+<p><img src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/3.jpg" alt="Streaming App - Spotify"></p>
+<p>Even though registration is optional in streaming apps, it is highly suggested. It will allow the project owner to have better analytics data, learn more about users, and better understand user behavior. For users, registration will mean more personalization, better music discovery, own library, and much more.</p>
+<p>There are different ways to implement registration and login in the application:</p>
+<ol>
+<li>
+<p>Classic email+password approach: the user will need to provide his email, think of a password, and fill some additional forms if required (like name, address, and more, depending on project goals). Development can take around 25 hours and would cost approximately $875 (with a $35/h hourly rate).</p>
+</li>
+<li>
+<p>Phone login: the user will provide his phone, and instead of a password that he would need always to remember, our server would send him an SMS with a verification code. This way might not always be convenient - if the user lost his phone, he would have problems accessing his last account. However, this method will be cheaper: around 12 hours, or $420.</p>
+</li>
+<li>
+<p>Social logins: this method will allow the user to sign in with already existing accounts: Facebook, Twitter, Google, and others. This is a faster and easier way to log in, but we will need to think of social networks that are most commonly used amongst your target audience. On average, one social network integration can take 8-12 hours and can cost up to $420. Even though integrating one social network login can be cheap, it is a good idea to have at least two methods, just to be sure that user will have an account in the selected network. Or even combine Social Logins with Phone or Email authorization.</p>
+</li>
+</ol>
+<div class="portoflio-desc">
+    <a href="https://mova.io/portfolio/zygo/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/transparent.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Portfolio: Zygo</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            Want to see a real-world example with an interesting twist? We worked on a streaming app that helped people working out. Instead of just music our users are listening to a workout audio guide and having lots of other interesting features. Want something similar? Let us know at mail@mova.io
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="search">Search</a></h2>
+<p>Search is a simple but essential part of the application. It will allow a user to search music online by a given keyword. When the user enters something, we will send his request to the server, where back-end will try to find an artist, album, or a track that matches user's request. When done - we will show what we found to a user in a Search Results screen.</p>
+<p>Average implementation time can take around 26 hours and can cost about $910 with a $35/h rate.</p>
+<h2><a name="discover">Discover</a></h2>
+<p><img src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/4.jpg" alt="Streaming App - Discover"></p>
+<p>Discover is one of the most exciting features and one of the most complicated ones. Our mobile and back-end developers will need to write an AI algorithm (artificial intelligence) that will suggest users new music according to their tastes. So, how to create a music app that will also recommend new music to a user?</p>
+<p>Depending on a budget, Discover can use following parameters to find new music for a user:</p>
+<ul>
+<li>Similar Artists and tracks (under the same genre, for example)</li>
+<li>Favorite Artist and Albums of user's friends</li>
+<li>Favorite Artists and Albums of other users, who have similar tastes in music</li>
+</ul>
+<p>And much more. Discover algorithm can always be improved. We can make a music streaming app with an elementary Discover feature (for example, suggesting music in a similar genre), and then "teach" an algorithm to recommend music in new and sophisticated ways. Development of a Discover feature will need at least 40 hours ($1400). The final price and timeframes will depend on a level of complexity.</p>
+<div class="another-article-container" style="border-color: #a3e8ff;">
+    In this article, we are trying to estimate a music streaming application. You might also be interested in another post from this series: <a href="https://mova.io/blog/how-to-create/">how to make a dating app services.</a>
+</div>
+<h2><a name="player">Player</a></h2>
+<p><img src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/6.jpg" alt="Streaming App - Player"></p>
+<p>The player is obviously a core feature of any music application. If you want to build an app like Spotify, you won't be able to skip a Player screen. Whether we will play audio files locally or will stream it from the server - we will need to show a Player screen to a user so that he can control everything.</p>
+<p>Player screen is not just a name of a current song and an artist. It also has features like:</p>
+<ul>
+<li>The album cover, and all the artist, album and track info;</li>
+<li>Player controls: next or previous song, play, and pause, volume control;</li>
+<li>List of the songs that will be played next</li>
+<li>Additional features, such as "Liking" a song, adding it to a playlist, saving to user's library, integration with third-party services, and more.</li>
+</ul>
+<p>Developing a usual player screen can take around 20 hours ($700). However, in the case with streaming applications, back-end developers will need additional time to add some changes to infrastructure to allow streaming, which will increase development time to 36 hours in total: $1,260.</p>
+<h2><a name="additional">Additional Features</a></h2>
+<p>We just tried to understand how the main features of the music streaming app work, and how much they cost. If you are curious how to make your own music app even better, you might think of adding some of these features:</p>
+<ul>
+<li>
+<p>Artist Profile, Album Info: these are two different screens, but they represent more or less similar information. Some artist description, list of his albums, most popular tracks, and so on. This feature can take around 56 hours or $1,960.</p>
+</li>
+<li>
+<p>User's Library: some streaming applications allow users to have their own library. This is a nice to have feature if you want to build a music app: whenever user likes a song, he will add into his library and will be able to find it later easily. Libraries can save artists, songs, albums, playlists.  Depending on features that you might need to implement, user's library can take from 40 hours ($1,400) to 80 hours ($2,800) or more.</p>
+</li>
+<li>
+<p>Payments: depending on your business model, you might need to pay for a music license (if you are going to include other artist's music). Besides, you might want to have some profits from the application and services as well, so you will definitely need to add a payment method to the app, so user can subcscirbe for Premium features, buy albums, and so on. Payments integration can take around 32 hours (if we will use Stripe or native In-App Purchases) and can cost approximately $1,120.</p>
+</li>
+<li>
+<p>Admin Panel: to manage whole music library we will need some kind of Admin Panel. Usually, it also includes a list of users, some stats, and more. Depending on Admin Panel complexity, prices can be from $1,400 (around 40h of work, will include a way to upload new tracks, edit existing ones, and view user's data) to $2,800 and more.</p>
+</li>
+<li>
+<p>Offline mode: Even though we are working on a streaming app, sometimes users might need to listen to music offline. We could access music from user's local storage, or cache tracks locally. Usually this is a premium feature, and not available for a free users.</p>
+</li>
+</ul>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     Applications made by our developers are used by more then a million of happy users monthly. We can help you build a high-quality application! Write to us at mail@mova.io or check our <a href="https://mova.io/services/android/">Android application development services</a>.
+</div>
+<h2><a name="summary">Summary</a></h2>
+<p><img src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/9.jpg" alt="Streaming App - Summary"></p>
+<p>We just tried to understand how to make a music app. Also, we've made estimations how much average music streaming application for iOS or Android can cost. Of course, every project is unique, and estimations can slightly change according to specification, user interface complexity, number of features, and more.</p>
+<p>If you would like to estimate your own project, whether it is a music app, or something different - just let us know by writing at <a href="mailto:mail@mova.io">mail@mova.io</a>.</p>
+<p>And for now, let's finally see how much development of the whole app will take (for one selected platfrom - iOS or Android), and how much it will cost:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Hours</th>
+<th>Costs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Login and Registration</td>
+<td>25</td>
+<td>$875</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>26</td>
+<td>$910</td>
+</tr>
+<tr>
+<td>Discover</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Player</td>
+<td>36</td>
+<td>$1,260</td>
+</tr>
+<tr>
+<td>Artist and Album Profiles</td>
+<td>56</td>
+<td>$1,960</td>
+</tr>
+<tr>
+<td>User's Library</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Payments</td>
+<td>32</td>
+<td>$1,120</td>
+</tr>
+<tr>
+<td>Admin Panel</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>10 weeks</td>
+<td>$10,325</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see, simple native iOS or Android music streaming application can cost around $10,000 and will take approximately 2.5 months from idea to releasing to App Store or Play Market. Depending on a budget and requirements, these estimations can be changed - we can only include features that your app needs most in the very beginning, and then continue adding features according to user's feedback after the release.</p>
+<p>If you would like to develop an application, just let us know at <a href="mailto:mail@mova.io">mail@mova.io</a>. Our team of experienced mobile and web developers is always ready to help!</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+    <div>Have a question? Just write to us at:</div>
+    <span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+    <div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+  .some-style { color: #fafafa; }
+</style>
+      </section>
+
+      <section class="post-info" data-gtm-vis-recent-on-screen-10579059_27="91030" data-gtm-vis-first-on-screen-10579059_27="91030" data-gtm-vis-total-visible-time-10579059_27="500" data-gtm-vis-has-fired-10579059_27="1">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=How%20to%20Create%20a%20Music%20Streaming%20App&amp;url=https://mova.io/blog/how-to-build-music-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/how-to-build-music-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/how-to-build-music-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/how-to-2/">how-to</a> <a href="https://mova.io/blog/tag/music/">music</a> <a href="https://mova.io/blog/tag/mobile-2/">mobile</a> <a href="https://mova.io/blog/tag/estimation/">estimation</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/gps-navigation-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Creating a GPS Navigation App - 7 Things to Consider</h2>
+		              <p class="post-nav-excerpt">How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-how-to-2 tag-music tag-mobile-2 tag-estimation">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app4090" name="dsq-app4090" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/how-to-build-music-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5be54a1fed3a92000107c859"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-how-to-2 tag-music tag-mobile-2 tag-estimation"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.6352866122021252" frameborder="0" width="100%" height="50px" scrolling="no" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/count.js.download" async=""></script>
+
+
+<iframe style="display: none;" src="./How to Make a Music App Like Spotify, Pandora, SoundCloud - mova.io_files/saved_resource(1).html"></iframe><script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://mova.io/blog/doctor-appointment-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How to Create a Doctor Appointment App Like Practo, Zocdoc | mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script type="text/javascript" async="" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/analytics.js.download"></script><script async="" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/gtm.js.download"></script><script async="" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="If you are looking for a promising direction in functional medicine or pharmacy, you might be interested in &quot;find a doctor app&quot; development. These apps help anyone to find the nearest doctor and book an appointment in a few clicks.​">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/doctor-appointment-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/doctor-appointment-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Create a Doctor Appointment App Like Practo, Zocdoc | mova.io">
+    <meta property="og:description" content="If you are looking for a promising direction in functional medicine or pharmacy, you might be interested in &quot;find a doctor app&quot; development. These apps help anyone to find the nearest doctor and book an appointment in a few clicks.​">
+    <meta property="og:url" content="https://mova.io/blog/doctor-appointment-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2019/03/0.jpg">
+    <meta property="article:published_time" content="2019-03-18T06:33:00.000Z">
+    <meta property="article:modified_time" content="2019-03-25T06:34:04.000Z">
+    <meta property="article:tag" content="health">
+    <meta property="article:tag" content="doctor">
+    <meta property="article:tag" content="ios">
+    <meta property="article:tag" content="android">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Create a Doctor Appointment App Like Practo, Zocdoc | mova.io">
+    <meta name="twitter:description" content="If you are looking for a promising direction in functional medicine or pharmacy, you might be interested in &quot;find a doctor app&quot; development. These apps help anyone to find the nearest doctor and book an appointment in a few clicks.​">
+    <meta name="twitter:url" content="https://mova.io/blog/doctor-appointment-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2019/03/0.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="health, doctor, ios, android">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1500">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How to Create a Doctor Appointment App Like Practo, Zocdoc | mova.io",
+    "url": "https://mova.io/blog/doctor-appointment-app/",
+    "datePublished": "2019-03-18T06:33:00.000Z",
+    "dateModified": "2019-03-25T06:34:04.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2019/03/0.jpg",
+        "width": 2000,
+        "height": 1500
+    },
+    "keywords": "health, doctor, ios, android",
+    "description": "If you are looking for a promising direction in functional medicine or pharmacy, you might be interested in &quot;find a doctor app&quot; development. These apps help anyone to find the nearest doctor and book an appointment in a few clicks.​",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/embed.js.download" data-timestamp="1553659638513"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-health tag-doctor tag-ios tag-android" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">What Does it Take to Create a Doctor Appointment App</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2019-03-18">18 Mar 2019</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2019/03/0.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-health tag-doctor tag-ios tag-android">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good way to improve the quality of services, stand out among competitors and gain the trust of customers. Doctors app is must-have for public and private medicine, as well as the pharmaceutical business! Since such applications contribute to the effective interaction between the doctor and the patient.</p>
+<p>But how to create a find a doctor appointment app? Let's find out!</p>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#main">Main features of healthcare apps</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#monetization">Business and monetization models doctor booking app</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#estimations">Mobile doctor app estimations</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#time">How much time does it take to develop an app?</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#process">Development process</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#value">Value of medical appointments app as a startup idea</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#apps">Popular doctor appointment applications</a></li>
+<li><a href="https://mova.io/blog/doctor-appointment-app/#conclusion">Conclusion</a></li>
+</ol>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/2-4.jpg" alt="doctor finder app"></p>
+<p>The statistics say that at least 35% of smartphone owners use mobile applications to help monitor their health. This can be just one application, for example, medicine search, or several medical programs for Android or iOS at once.</p>
+<p>How effective are they? It depends on the application type, how user-friendly the user interface is, and how seriously the user takes it. Experts predict that by next year the number of healthcare applications users will exceed 500 million.</p>
+<h2><a name="main">Main features of healthcare apps</a></h2>
+<p>There is a high level of competition in the medical market because patients carefully choose which clinic to entrust their health. The professionalism of the doctors and the service of the clinic is the decisive factor in the selection.</p>
+<p>Nice developed medical doctor app will help clients of the clinic to interact with it easily and save their time. It is also important that the application reliably protect patient data and medical confidentiality.</p>
+<p>A mobile application is a virtual medical record with various capabilities that will make it easy and convenient to take care of your health. But what features should it include?</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/3-3.jpg" alt="medical doctor app"></p>
+<p><strong>Book a doctor appointment</strong></p>
+<p>The patient can enroll at any time from any place without having to call the clinic. A booking can be moved or canceled;</p>
+<p><strong>Chat with a professional</strong></p>
+<p>Sometimes just a couple of messages is enough. If user has just a couple of questions, or would like to learn more about his state - he can just send standard or or video message to  a specialist inside the application, without an offline appointment</p>
+<p><strong>Clinic or doctors search</strong></p>
+<p>Medical application should allow users to browse clinics around them, view other user reviews, check the schedule and list of specialists, and more</p>
+<p><strong>Specialists</strong></p>
+<p>Information about doctors, schedule and place of admission, rating, and reviews of patients, recommendations</p>
+<p><strong>Call a doctor</strong></p>
+<p>If it is not possible to come to the clinic, the patient can call the doctor through the doctor scheduling app. A specialist can describe his symptoms, as well as appoint a specific time of the visit;</p>
+<p><strong>Medical history</strong></p>
+<p>The patient can view past and future doctor's appointments, treatment prescription, medical examinations and tests directly in the application;</p>
+<p><strong>Family account</strong></p>
+<p>The ability to add a child or a close relative to your account will allow customers to take care of their loved ones;</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/4-3.jpg" alt="mobile doctor app"></p>
+<p><strong>Reviews and rating system</strong></p>
+<p>After visiting the doctor, the patient can evaluate his work;</p>
+<p><strong>Payment for services through the application</strong></p>
+<p>The patient can pay for the clinic services from his personal account in the application or by credit card.</p>
+<p>Additional features:</p>
+<ul>
+<li>Medication data, its reviews prices, and more.</li>
+<li>Database. Obtaining detailed information about the medicine, its value by pointing the camera of the smartphone at the packaging barcode.</li>
+<li>Patient's health log that helps to monitor vital parameters (blood pressure, pulse, blood glucose data).</li>
+<li>Push Notifications about changes, news, promotions, events, new arrivals, etc.</li>
+</ul>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+Doctor app includes lots of features from social applications: messaging, reviews, and more. If you are curious about how to <a href="https://mova.io/blog/how-to-make-a-social-media-app/">build a social media app</a> or if you have any questions about doctor booking app, contact us. The best mova.io specialist will be glad to help you.
+</div>
+<h2><a name="monetization">Business and monetization models doctor booking app</a></h2>
+<p>How can online doctor app be useful for business?</p>
+<p><strong>Increase in profits.</strong></p>
+<p>The application for doctor appointment is a new tool for increasing sales and returning visitors. The easier it is for the patient to interact with the booking system of the clinic, the more readily he will come back.</p>
+<p><strong>Customer loyalty</strong></p>
+<p>Offer your patients a convenient and affordable service to take care of their health, provide individual discounts. Your own application will help you to learn more about users, find out what they need and what they are looking for. Application will allow you to contact your users as well: reminding about upcoming or missing appointments, asking users if they need additional help, or how recovery is going, and much more.</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/5-3.jpg" alt="doctor app automates staff tasks"></p>
+<p><strong>Automating staff</strong></p>
+<p>Simple arithmetic: the more entries through the application, the fewer calls to the registry. Of course, there will be conservative patients for whom call is easier, however, administrators will be able to manage easily.</p>
+<p><strong>Personal offers</strong></p>
+<p>The data from the mobile application will help you to get to know your customers better and offer promotions interesting to them. For example, offer your patients who did not use your services for a long time to be examined by a doctor at a reduced price. It will definetely help you to attract at least half of the non-active patients.</p>
+<p><strong>Feedback</strong></p>
+<p>You can learn about the quality of the work of doctors and clinic staff by collecting feedback through the application. You can quickly correct problems, and patients will be pleased to know that their opinion is important to you.</p>
+<p><strong>Competitive advantage</strong></p>
+<p>Own mobile application will highlight you among other medical centers and will be another argument in the choice of your clinic.</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/6-3.jpg" alt="book a doctor appointment"></p>
+<p>Usually, doctor appointment app that is made for one particular clinic is available for free. It helps to generate new patients flow, which helps increase profits.</p>
+<p>Applications that work as a catalog of different clinics usually use ads to make money. Besides, they can have individual contracts with various clinics. It allows earning money by helping each of them to increase the number of new patients, return existing users, and more.</p>
+<p>Another way of monetization is offering in-app payments for rendered services, or in-app store that would help people to buy medications, pay for appointments, and so on.</p>
+<p>Some mobile doctor applications generate profits using a paid subscription. For example, each doctor could pay a monthly membership fee. Depending on your business model, you can allow only doctors with paid subscriptions in the app. Or to show premium doctors higher in searches, and help them to find more clients with in-app ads. In this case, doctors will be happy to pay the fee, because it will allow them to increase their client base, and to market their services easier then in offline.</p>
+<p>If you are not sure about the correct business strategy, contact mova.io. We worked on many projects, and we understand which model will work best in every individual case. Our highly professional specialists will help you to monetize Android and iOS applications by finding unique solutions for your project.</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/7-2.jpg" alt="how to make a doctor booking app"></p>
+<h2><a name="estimations">Mobile doctor app estimations</a></h2>
+<p>Estimating the costs and timeframes for each particular stage is a difficult task. To do this, we need to be well aware of the final result and be technically savvy in order to estimate the labor costs for each function. Therefore, most experienced specialists are usually involved in this process.<br>
+Usually, the app development cost estimate occurs in two stages:</p>
+<p><strong>1. Preliminary cost estimate</strong></p>
+<p>Although the preliminary estimations are called “rough,” it allows one to know with sufficient accuracy the necessary amount of investments needed to create an application before signing any contracts. That is, you can get it within one day max.</p>
+<p><strong>2. The exact price for application development</strong></p>
+<p>A more accurate assessment of the cost of developing applications includes estimations for each particular feature: Welcome Screen, Login Screen, Registration, and so on. We calculate how much time is needed for user interface design and development, business logic development, back-end API server, and so on. It helps us to make an extremely precise estimation, that will be used to make a final offer. It is supported by a contract, which fixates the dates and stages of work with a detailed description of the final result.</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/8-2.jpg" alt="8-2"></p>
+<h2><a name="time">How much time does it take to develop an app?</a></h2>
+<p>The process of creating a doctor phone app for iOS, Android and other platforms consists of several successive stages. Terms at each stage may be different depending on the complexity of work specifically for each case.</p>
+<ul>
+<li>Free Estimate (~1 day)</li>
+<li>Detailed study of the problem, analysis of the market and competitors (1-3 days)</li>
+<li>Prototyping Writing technical specifications (5-15 days)</li>
+<li>Design (5-15 days)</li>
+<li>Programming (depends on the project, number of features, complexity, and so on)</li>
+<li>Testing (just like Programming, this stage depends a lot on project complexity, and is unique to each project)</li>
+<li>Deployment</li>
+</ul>
+<p>On average, doctor appointment application development for one platform (iOS or Android) can take around four months:</p>
+<ul>
+<li>user interface development: at least ~200 hours</li>
+<li>business logic development: at least ~350 hours</li>
+<li>back-end development: at least 250 hours</li>
+</ul>
+<p>If you decide to make an app for both platforms, it will add an additional 500 hours, depending on the project complexity. With the second platform, we will be able to save much time on reusable parts of the project, such as back-end and admin panel.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+The last few months were full of a whole set of events related to music services. And if you have an idea to <a href="https://mova.io/blog/doctor-appointment-app/">create a music app</a>, contact us. Our specialists will be happy to develop your project and help you achieve your goals
+</div>
+<h2><a name="process">Development process</a></h2>
+<p>The development of a mobile application from scratch to release takes place on average in 7 basic steps. Some of them are pretty simple and can be done in a couple of days. Others might 3 months, or even more. Some steps can be performed in parallel and some only sequentially.</p>
+<p>Below are the stages of the full cycle of mobile apps development from the planning to the release to stores.</p>
+<p><strong>Planning</strong></p>
+<p>Each project participant must clearly understand the task. To do this, we make a mind map, which clearly demonstrates all the product functions and prototypes, which reflect all the application screens and the transition scheme for them. Depending on our needs, prototypes can be static or interactive.</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/9-1.jpg" alt="9-1"></p>
+<p><strong>Design</strong></p>
+<p>After the approval of the prototypes, we take up the design of the application. After all, it is essential that the application is beautiful, functional and contains unique features that distinguish your application from competitors. We carefully draw each screen, taking into account the characteristics of the platform.</p>
+<p><strong>Mobile App Development</strong></p>
+<p>Directly developing a mobile application consists of three stages. At each stage, the customer is involved in the process in order to judge the status of the project independently and try how it works.</p>
+<p>You must select a platform for development. <a href="https://mova.io/services/android/">Android mobile development</a> or <a href="https://mova.io/services/ios/">iOS mobile development</a>, or both.</p>
+<p><strong>Server Development (backend)</strong></p>
+<p>The back-end is the core of the project. It helps us to save and retrieve the data from the database, authorize users. The back-end is where the core logic of the project lives in. It is essential to write the API and all the accompanying documentation and keep it in good condition.</p>
+<p><strong>Testing</strong></p>
+<p>Automatic and manual testing on different devices. It is important to pay great attention to the quality of each feature present in the application and to test them under different conditions. Users never use the app in an ideal environment, so we need to see how the app works without internet or on a slow connection. What happens if the user turns off the phone right in the middle of important calculations? Moreover, how the app will work in a “Low Power” mode, or when the battery is almost drained.</p>
+<p><strong>Publication to App Store and Play Market</strong></p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/10-1.jpg" alt="Doctor app marketing"></p>
+<p><strong>Promotion and Marketing</strong></p>
+<p>Marketing is extremely important and often forgotten part of the process. Without users, the project won’t live and obviously won’t generate any revenue. Marketing can be started even before the development itself. You can contact the media, create a website with additional info about the project, begin gathering emails of early adopters, attract people in social media, and listen to their feedback.</p>
+<h2><a name="value">Value of medical appointments app as a startup idea</a></h2>
+<p>This is a promising direction in functional medicine and pharmacy. Many health care institutions are interested in implementing new technologies. Every year the number of hospitals and private clinics increases, wishing to acquire their own mobile applications, but not everyone is ready to spend a lot of time and money on their development. However, on average, more than $ 2.5 billion is being wasted on outdated ways of interacting with patients. Moreover, we think that many hospitals will benefit a lot from simplifying the process of booking new appointments, acquiring new users, simplifying the procedures of collecting data about user’s treatment, and so on. The mobile application will not only increase profits, but will improve the user’s loyalty, and will help to expand a number of services that the clinic provides.</p>
+<p>Applications allow you to systematize all the essential information for the health worker and have unrestricted access to it at any time, and on the patient’s side - to quickly receive adequate assistance and maintain health.</p>
+<p>Such a startup idea will help to increase sales and return visits. Besides, it will stand out among competitors and will gain the trust of patients. Reducing the burden on staff and take feedback from users will be additional advantages.</p>
+<div class="portoflio-desc">
+    <a href="https://mova.io/portfolio/lyvfit/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/transparent.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Portfolio: LyvFit</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            We already worked on apps that allow you to find people who will make you healthy. LyvFit app allows you to find best trainers around you, contact them, and book a session. As for trainers, they can post their services in the app for a small fee, and make money right in the app. Want to make something similar? Contact us at mail@mova.io!
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="apps">Popular doctor appointment applications</a></h2>
+<p><strong>Practo</strong></p>
+<p>This application will be useful for both a user and his relatives and friends. You may not have suspected that going to the doctors may be completely relaxed and effective. Moreover, through Practo, one can sign up for consultations with individual doctors, general examinations in clinics, spas, etc. You can get the best advice from doctors and experts in your city and share information with others.</p>
+<p>Thanks to the search capabilities, users can search for doctors depending on the area, the availability of the institution, and even symptoms. By the way, you can consult online, which is very important for those who can not get to the hospital for several reasons. More than 30,000 qualified doctors of 20 specialties are gathered here. As well as a feature of the doctor appointment online app is that you have access to useful selected articles from experts in the field of health.</p>
+<p><strong>ZocDoc</strong></p>
+<p>ZocDoc is a medical technology company that allows patients to find and make an appointment with a doctor through a mobile application or online. The company's management claims that the average waiting time for a doctor is 19 days; the goal of Zocdoc is that patients can meet with the doctor after 24 hours.</p>
+<p>A big problem in this area is inefficient planning methods and a high percentage of canceling or rescheduling a doctor's appointment. Having solved these issues, ZocDoc managed to achieve its goal. The company earns a subscription fee of $ 3000/year, which is paid by doctors and provides free access to patients.</p>
+<p><img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/11-1.jpg" alt="doctor scheduling app"></p>
+<p>Thanks to the law “On Protection of Patients and Affordable Care”, by 2025 there may be a shortage of more than 100,000 doctors, which will make the ZocDoc service even more in demand.</p>
+<p>Each month, the company attracts more than 2.5 million unique visits.<br>
+The ZocDoc platform is conveniently built for both doctors and clients with a variety of filters to find the best option. A special approach to customers and a focus on fulfilling all their needs leaves no chance for customers not to return for ZocDoc services</p>
+<h2><a name="conclusion">Conclusion</a></h2>
+<p>Most of the online customer booking services do not stand still. They constantly improve and acquire new useful features. This type of applications is even actively implemented in many government agencies, helping to reduce queues. It is safe to say that the competition between various services for online booking will increase every year. Therefore, it is essential to create the right, and unique doctor consult app.</p>
+<p>If you don’t know how to make a doctor booking app and want to develop it, our professional team will be happy to help you. We are developing mobile applications for iOS and Android operating systems for years, and we will be glad to share our experience with you. We worked on a wide range of projects, including applications that help find and book the right professional.</p>
+<p>To start the process, just contact us with your idea. Our business analysts will help you to make a detailed specification and will describe in details how to build a doctor appointment app. We will find the best business plan and monetization strategy. Our company provides a full cycle of creating doctor finder app. Starting from the design of the interface and the development of the client part to the creation of the server part and integration with the existing IT infrastructure.</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+<div>Have a question? Just write to us at:</div>
+<span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+<div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+.some-style { color: #fafafa; }
+</style>
+
+      </section>
+
+      <section class="post-info" data-gtm-vis-recent-on-screen-10579059_27="67807" data-gtm-vis-first-on-screen-10579059_27="67807" data-gtm-vis-total-visible-time-10579059_27="500" data-gtm-vis-has-fired-10579059_27="1">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=What%20Does%20it%20Take%20to%20Create%20a%20Doctor%20Appointment%20App&amp;url=https://mova.io/blog/doctor-appointment-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/doctor-appointment-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/doctor-appointment-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/health/">health</a> <a href="https://mova.io/blog/tag/doctor/">doctor</a> <a href="https://mova.io/blog/tag/ios/">ios</a> <a href="https://mova.io/blog/tag/android/">android</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/gps-navigation-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Creating a GPS Navigation App - 7 Things to Consider</h2>
+		              <p class="post-nav-excerpt">How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/ecommerce-mobile-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/02/black-friday-buy-computer-34577.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Why your E-commerce​ Store Needs a Mobile Application</h2>
+		              <p class="post-nav-excerpt">According to Google 2017-2018, 68% of smartphone owners use their devices for mobile shopping app, and 66% of them make purchasing decisions with a smartphone at least once a week.…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-health tag-doctor tag-ios tag-android">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app5625" name="dsq-app5625" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/doctor-appointment-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5c934a7e283a160546bc97aa"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-health tag-doctor tag-ios tag-android"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.2946761499112043" frameborder="0" width="100%" height="50px" scrolling="no" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/count.js.download" async=""></script>
+
+
+<script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><iframe style="display: none;" src="./How to Create a Doctor Appointment App Like Practo, Zocdoc _ mova.io_files/saved_resource(1).html"></iframe><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

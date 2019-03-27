@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://mova.io/blog/how-to-create-messaging-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script async="" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/gtm.js.download"></script><script async="" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="Do you want to create a successful startup? Then you need to develop messaging app for iOS and Android. Because instant messengers rank first in the number of downloads in the world.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/how-to-create-messaging-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/how-to-create-messaging-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io">
+    <meta property="og:description" content="Do you want to create a successful startup? Then you need to develop messaging app for iOS and Android. Because instant messengers rank first in the number of downloads in the world.">
+    <meta property="og:url" content="https://mova.io/blog/how-to-create-messaging-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2019/03/1-2.jpg">
+    <meta property="article:published_time" content="2019-02-18T06:44:00.000Z">
+    <meta property="article:modified_time" content="2019-03-14T06:44:45.000Z">
+    <meta property="article:tag" content="how-to">
+    <meta property="article:tag" content="messaging">
+    <meta property="article:tag" content="ios">
+    <meta property="article:tag" content="android">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io">
+    <meta name="twitter:description" content="Do you want to create a successful startup? Then you need to develop messaging app for iOS and Android. Because instant messengers rank first in the number of downloads in the world.">
+    <meta name="twitter:url" content="https://mova.io/blog/how-to-create-messaging-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2019/03/1-2.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="how-to, messaging, ios, android">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="1500">
+    <meta property="og:image:height" content="1000">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io",
+    "url": "https://mova.io/blog/how-to-create-messaging-app/",
+    "datePublished": "2019-02-18T06:44:00.000Z",
+    "dateModified": "2019-03-14T06:44:45.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2019/03/1-2.jpg",
+        "width": 1500,
+        "height": 1000
+    },
+    "keywords": "how-to, messaging, ios, android",
+    "description": "Do you want to create a successful startup? Then you need to develop messaging app for iOS and Android. Because instant messengers rank first in the number of downloads in the world.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/embed.js.download" data-timestamp="1553656422483"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><script src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-how-to-2 tag-messaging tag-ios tag-android" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2019-02-18">18 Feb 2019</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2019/03/1-2.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-how-to-2 tag-messaging tag-ios tag-android">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a chat application and will try to understand how much the app development could cost.</p>
+<p>According to <a href="https://www.similarweb.com/blog/mobile-messaging-app-map-2018">SimilarWeb study</a>, it is known that in 168 countries, messengers are leading in the number of downloads.</p>
+<p>In 2016, there were 1.58 billion users of instant messengers in the world. According to the <a href="https://www.statista.com/statistics/483255/number-of-mobile-messaging-users-worldwide/">Statista Statistics Portal</a>, by 2021 this number will increase to 2.48 billion (which is one-third of the world's population). The market is divided between lots of messaging platforms: Facebook Messenger, WhatsApp, Telegram, Viber, Signal, and many others. There is no leading messaging application yet, so perhaps now it makes sense to create a instant messaging app on Android or iOS.</p>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#should-i">Should I make a new and better messaging app?</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#how">How to create a chat application like WhatsApp?</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#arch">Messaging application architecture</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#ui">Chat application interface</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#privacy">Privacy and Security</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#how-much">How much does it cost to create a chat application?</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#scope">Scope of work</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#differences">Differences between iOS and Android</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#post-release">Post-release support</a></li>
+<li><a href="https://mova.io/blog/how-to-create-messaging-app/#conclusion">Conclusion</a></li>
+</ol>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/3-2.jpg" alt="Messaging application development"></p>
+<h2><a name="should-i">Should I make a new and better messaging app?</a></h2>
+<p>On average, each phone user has two to five instant messengers.</p>
+<p>Over time, some messaging applications lose their leadership positions, giving way to new ones. So, in one year, Skype has moved from the first place, which it held for several years, to fifth. In 2017, there has been a new trend - public channels and chats. Their presence attracts new users. In fact, it even turns instant messaging apps into social media applications.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+    Years of experience allows us to guarantee the high quality of provided services and an individual approach to each client. Therefore, if you want to build a messaging app, <a href="https://mova.io/blog/how-to-create/">build a dating app</a> or have any other ideas, we will be happy to help you. Just contact our mova.io specialists at mail@mova.io
+</div>
+<p>According to the Statista, here is the list of the most popular messaging apps for mobiles:</p>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>Monthly active user share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WhatsApp</td>
+<td>1300 million</td>
+</tr>
+<tr>
+<td>Facebook Messenger</td>
+<td>1300 million</td>
+</tr>
+<tr>
+<td>WeChat</td>
+<td>980 million</td>
+</tr>
+<tr>
+<td>QQ Mobile</td>
+<td>843 million</td>
+</tr>
+<tr>
+<td>Skype</td>
+<td>300 million</td>
+</tr>
+<tr>
+<td>Viber</td>
+<td>260 million</td>
+</tr>
+<tr>
+<td>SnapChat</td>
+<td>255 million</td>
+</tr>
+</tbody>
+</table>
+<p>Statistics of the growth in the number of users of messaging apps shows that there is a significant potential on the market for such applications. However, when planning a messaging app startup, you need to be ready for competition. The chat app development for iOS or on Android begins with the correct formulation of the business plan, detailed specification, and selection of proper development tools. Besides, you will also need to think about ideas and features that will help your service stand out, and overcome the competition. Having all these requirements ready, you will get an application that meets the needs of users.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+If you want to develop messaging app, our <a href="https://mova.io/services/ios/">iOS mobile app development company</a> will be happy to help you.
+</div>
+<h2><a name="how">How to create a chat application like WhatsApp?</a></h2>
+<p>Not so long ago, messaging apps were created either as chat rooms, (for example, WhatsApp), or as an application for calls (Skype and Viber). Later developers began to add some new features. First, developers added audio-calls into their apps. A bit later, apps like WhatsApp started to include video calling functions. Then open API arrived, bots, masks, statuses, payment methods, public channels. However, it is difficult to introduce new functionality or change the structure when there are millions of messenger users. For example, first players like WhatsApp still don’t include open APIs or bots.</p>
+<p>How to create a messaging app? The development of architecture is the main difficulty in creating an application for sending messages on Android or iOS. The structure of the app must be developed in such a way that it can add new features without any serious consequences.</p>
+<p>When developing a messaging app, it is necessary to lay in its foundation not only the main features of other existing applications but also features that may be needed in the future.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+If you want to know <a href="https://mova.io/blog/how-to-make-a-social-media-app/">how to create a social media app</a>, or if you have any questions related to it, contact us at mail@mova.io. We will help you to work out ideas, create concepts, think through ways to monetize, develop promotion strategies, make a stunning interface design, and develop a well-tested mobile application.
+</div>
+<h2><a name="arch">Messaging application architecture</a></h2>
+<p><strong>1. Flexibility, scalability, and testability</strong></p>
+<p>In the process of work, it is necessary to make the architecture divide into autonomous layers. Then you need to develop the business logic, presentation, and separated data objects that could be changed independently of each other. Regardless of the system size, this approach preserves its flexibility, scalability (scaling, or increasing, the number of functions) and testability.</p>
+<p>It is necessary to make scalable not only the code but also the system infrastructure itself.</p>
+<p><strong>2. Application performance</strong></p>
+<p>It often happens that the instant messaging app development team’s chase after a popular programming language. They build a chat app, but over time, in the process, they understand that the chosen language, platform, or services and libraries used don’t fit app demands. You need to understand all the pros and cons of any language and tool. It is necessary to use the platform that is best suited for building an effective system, and not the one that is currently popular.</p>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/8-1.jpg" alt="Messaging app architecture"></p>
+<p>Many developers use Ruby on Rails. This programming language is used in Airbnb, Basecamp, Bloomberg, Github, Goodreads, Kickstarter, Shopify, and millions of others. Ruby on Rails allows developers to start the development fast, and to roll out the very first beta version of an API just in days, compared too weeks if using other frameworks. The advantage of this framework is in its ability to provide a high speed of development, stable work, and ease of use.</p>
+<p>The cost of developing a project in Ruby on Rails is cheaper than in languages like Node.js, Go, or Elixir because it allows a developer to write code easier and faster. Besides application will be way easier to maintain in the future.</p>
+<p>When choosing tools, you need to focus on how effectively you can solve the problem with one or another of them. In essence, it is necessary to adjust the tools to the architecture, and not vice versa.</p>
+<div class="portoflio-desc">
+    <a href="https://mova.io/estimations/whatsapp/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/cover.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Estimations: WhatsApp</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            Curious how much it costs to make an app similar to WhatsApp? Check out our interactive estimations. You can select only the features that your project will need, and we will immediately show you the price! And when you are ready to start the project - just write to us at mail@mova.io
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<p><strong>3. Work with a large number of users and heavy loads</strong></p>
+<p>The main task in building an instant messaging application is creating the architecture and then adjusting the business logic of the system for it. Such a project does not always cope with heavy loads. Therefore, try to do the opposite: to work out the business logic of the entire system, and build an efficient architecture for it. In such an application, you can add new features easier, and at any time of the project lifecycle. It will not lose in performance and will not be afraid of high loads.</p>
+<p><strong>4. Compound instability</strong></p>
+<p>In the real world, high-speed Wi-Fi internet connection is not always available. Sometimes you have to work without the internet connection or with an extremely weak signal. Switching between base stations and mobile data carriers, or any other communication problems. The user does not want to think about the instability of the connection. He opens the application and wants to see new messages and send them, without thinking about the Internet. He expects to be notified about new events with push notifications, and he expects the application to send a message automatically, whenever it will have a stable connection.</p>
+<p>Therefore, it is necessary to optimize the software solution for stable operation even with an unstable Internet or without it. You also need to invest time in testing the reconnection and recovering all the data while working in the offline mode.</p>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/4-2.jpg" alt="Create a chat app"></p>
+<h2><a name="ui">Chat application interface</a></h2>
+<p>The user should easily understand how the app works, without any onboarding tutorials, banners, or tooltips. This is a messaging app, and UI should be as straightforward as possible: select a person, and start chatting! The easiest way to make user interface and user experience easy to use, and easy to understand is by using native technologies, native design principles, and native design elements. It will result in a predictable and convenient UI and UX. The customer sees familiar elements, knows how to use them, and he has no questions about how to use the messaging app.</p>
+<p>When working on a user interface design, it is essential to:</p>
+<ul>
+<li>Develop empty states of chats, screens, sections (where nothing has happened yet). So the user will understand what action to take.</li>
+<li>Provide the user with feedback. When you create a chat app, you will work with many features that will require some time: Sending messages, downloading files, and so on. While the user waits for something to happen (e.g., downloading a file from his friend), it is crucial to show that the process is underway, and it will be done soon.</li>
+<li>Test application under all the possible conditions. Messaging app is something that is used all the time, sometimes under very unexpected conditions.</li>
+<li>Always place the user first and try to help him as much as possible. For example, warn the user that he is using the mobile Internet at the time of sending a large file. These subtle touches can make users trust you, and they will be happy to use your application more.</li>
+<li>Show all the possible errors when they occur. For example, if the Internet is lost, the user should understand that something has gone wrong. However, it is better not to block any user actions. No internet connection? Why not allow the user to send a message, and we will post it the second we will have a connection back again.</li>
+</ul>
+<p>Also, try to imagine yourself as a user of your application. What would you add to make your life easier? For example, it is essential to organize a search within a specific chat. Quickly find the right time in the chat history, documents, photo or video.</p>
+<p>Another small feature that would improve user's experience is audio messages replay. Before sending voice messages, it is important that the user can listen to them. It should also be possible to correct the error or remove the unwanted message. Creating an application to send messages to the iPhone or Android requires a rigorous study of these and other nuances.</p>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/6-2.jpg" alt="Mobile chat apps development"></p>
+<h2><a name="privacy">Privacy and Security</a></h2>
+<p>Investing in good security is important. Right now you can easily find tutorials on the internet, that will help you to scan the traffic from the device, and to read unencrypted data. It puts personal correspondence of your users at risk.</p>
+<p>How to build a messaging app that would be secure enough? The first task of the developers is to ensure complete safety and privacy for all the users’ data and eliminate the dangers of hacking. It includes SSL encrypted communication between users, encrypted messages, and more. Another step would be anonymity, in some cases even without trying to a phone number and the ability of person recognition.</p>
+<p>Of course, it is not as easy as it sounds. For example, in an anonymous chat, people without linking to specific characters (phone number, name, location) will have problems understanding who is who. To do this, you need to use a one-time cipher, which everyone can use, but it is never repeated twice. Inviting people to such a conversation also happens with the help of a “key” that only works once, and is set only by the person himself.</p>
+<p>The list of features that will increase safety and improve privacy can go on. For example, encrypted messages won’t help much, if another user can just make a screenshot of a conversation. Or if incoming notifications are not encrypted, and they show all the info right on the lock screen of a phone. Lately, messaging apps also started to add exciting features: self-destructing messages, that will be shown only for a preset period of time. The list can go on forever, so it is essential to outline the most important ones for the release and then add new ones according to the users’ feedback.</p>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/2-3.jpg" alt="Messaging application costs"></p>
+<h2><a name="how-much">How much does it cost to create a chat application?</a></h2>
+<p>The price of developing a messaging app depends on the number of platforms you would like to target (iOS, Android, Web), the number of features you would like to add, and the complexity of the user interface design.</p>
+<p>The more complex the app, the higher the cost of mobile chat application development. The final price for the mobile chat apps development for iOS, an Android or a website could be understood only after determining the main tasks.</p>
+<p>So, how to make a chat app for almost any budget? You will need to experiement with number of functions, and be ready to release only with core features of the app. Simplifying the user interface, and reducing number of screens will also help to save costs.</p>
+<p>You can already check the prices for a WhatsApp-like app in our Interactive Estimations. It is important to remember, that WhatsApp is a very heavy application, which has not just chats, but video calls, file transfers, daily statuses, stories, and much more. Just select the features that you will need, and Interactive Estimation will provide you with prices and timeframes for development: <a href="http://mova.io/estimations/whatsapp/">http://mova.io/estimations/whatsapp/</a></p>
+<h2><a name="scope">Scope of work</a></h2>
+<p>The functionality of any messaging app is much more than it seems at first glance.</p>
+<p>Until you come across the development of an app like Viber, you will not notice how much additional functionality provides the necessary level of simplicity and usability:</p>
+<ul>
+<li>Message Statuses (sent, delivered, read);</li>
+<li>The ability to copy a message;</li>
+<li>The ability to reply to a specific message, and start a thread, or quote it</li>
+<li>Message forwarding function;</li>
+<li>Ability to delete messages in chat history (depending on the app, removing a message can be possible for you only, or for both parties);</li>
+<li>Sending emojis and stickers;</li>
+<li>Local conversations storage;</li>
+<li>Messaging history search</li>
+<li>Ability to disable notifications for new messages in a specific dialog;</li>
+<li>Ability to delete the dialogue;</li>
+<li>Sending images with a built-in photo-editor</li>
+<li>Compressing and converting photos and other files before sending to reduce the file size;</li>
+<li>Sending and opening a file;</li>
+<li>Sending a contact from the phone book;</li>
+<li>Reading QR codes.</li>
+<li>Sending geolocation, so you can quickly tell your friends where you are.</li>
+</ul>
+<p>And these are just the basic functions that are available in the free messaging app when communicating between two people. Some messaging application goes further and includes features like Payments. Or Integrate services for booking tickets, hotels, calling a taxi, paying bills for electricity, communications, and the Internet.</p>
+<p>If you want to create a messaging app, it is vital to determine the exact requirements for the functionality of the messenger. It allows seeing and understanding the full scope of work that needs to be done.</p>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/7-1.jpg" alt="Android chat application"></p>
+<h2><a name="differences">Differences between iOS and Android</a></h2>
+<p>Did you know that emoji is different for iOS and Android? It turns out that Apple has implemented a standard keyboard, which was used by owners of Apple devices, while Android does not have such a standardized keyboard.</p>
+<p>If you want to build android chat app, you might need to add a new button to the client's interface for emoji and stickers.</p>
+<p>In addition to the emojis incompatibility, there are lots of others. For example, videos that can be recorded and played have different codecs and formats. Basically, if you will record a video on Android, and will send it to an iOS device without converting - it might not work. Ideally, it needs to be sent to the back-end server, which will change the format of the video, making it work for both platforms, and only after sending it to a recipient.</p>
+<p><img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/5-2.jpg" alt="Chat application development"></p>
+<h2><a name="post-release">Post-release support</a></h2>
+<p>Chat application development for Android or iOS is just the very first stage of in the project lifecycle. Unless you are working on a corporate chat app, then the messenger should also be promoted and marketed. In the very beginning, when you just put the app to the App Store and Play Market, users will not see it. Even if users will search specifically for the app using its name - it is not guaranteed that it will be always on the first page in search results. Apple and Google optimize search to show most popular apps first.<br>
+To promote and market the app, it is necessary to lay a certain amount in the marketing budget. This includes:</p>
+<ul>
+<li>contextual and banner advertising;</li>
+<li>advertising in social networks;</li>
+<li>ASO-promotion (App Store Optimization) - a set of works for optimizing a mobile application. Namely, a proper compilation of title (title), keywords (keywords), descriptions (description), to maximize the visibility of your application in the search;</li>
+<li>payment for placement in the Google Play and App Store stores.</li>
+<li>after launch, the application must be polished and updated according to users’ feedback.</li>
+</ul>
+<h2><a name="conclusion">Conclusion</a></h2>
+<p>Messaging application development is a complex task, and should be handled by professional developers. Chat apps have lots of possible edge-cases that need to be tested well.</p>
+<p>Because of the application complexity, it is essential to choose the right tools from the beginning. It will allow you to scale the app quickly, add new features without breaking existing ones, and always to keep performance at high levels.</p>
+<p>We usually suggest going with native tools for mobile applications. Our <a href="https://mova.io/services/android/">Android mobile app development company</a> will be happy to consult you in any related questions.</p>
+<p>If you want to develop a messaging app, write to us at <a href="mailto:mail@mova.io">mail@mova.io</a>. We will arrange a meeting, discuss the task and will help you to figure out the best architecture for building a chat app for Android and iOS. And, of course, we will be glad to help you with the development of the app itself, testing it, releasing to the stores, and maintaining it after.</p>
+<p>We provide help on every possible stage of application development. Mova.io will help you to develop a stable application, design a stunning user interface design, test the app under different conditions. Besides, we will help you release the application to the store, and will provide post-release support, including app and back-end maintenance, and implementation of new features.</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+<div>Have a question? Just write to us at:</div>
+<span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+<div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+.some-style { color: #fafafa; }
+</style>
+      </section>
+
+      <section class="post-info">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=What%20Does%20it%20Take%20to%20Create%20a%20Messaging%20App%20Like%20WhatsApp,%20Viber%20or%20SnapChat&amp;url=https://mova.io/blog/how-to-create-messaging-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/how-to-create-messaging-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/how-to-create-messaging-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/how-to-2/">how-to</a> <a href="https://mova.io/blog/tag/messaging/">messaging</a> <a href="https://mova.io/blog/tag/ios/">ios</a> <a href="https://mova.io/blog/tag/android/">android</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/gps-navigation-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Creating a GPS Navigation App - 7 Things to Consider</h2>
+		              <p class="post-nav-excerpt">How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/ecommerce-mobile-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/02/black-friday-buy-computer-34577.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Why your E-commerce​ Store Needs a Mobile Application</h2>
+		              <p class="post-nav-excerpt">According to Google 2017-2018, 68% of smartphone owners use their devices for mobile shopping app, and 66% of them make purchasing decisions with a smartphone at least once a week.…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-how-to-2 tag-messaging tag-ios tag-android">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app3803" name="dsq-app3803" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/how-to-create-messaging-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5c88a1f3283a160546bc96bb"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-how-to-2 tag-messaging tag-ios tag-android"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.019298721654719797" frameborder="0" width="100%" height="50px" scrolling="no" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/count.js.download" async=""></script>
+
+
+<iframe style="display: none;" src="./How to Make a Messaging App Like WhatsApp, Viber, SnapChat - mova.io_files/saved_resource(1).html"></iframe><script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://mova.io/blog/gps-navigation-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How to Build a GPS Navigation App Like Waze | mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How to Build a GPS Navigation App Like Waze _ mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How to Build a GPS Navigation App Like Waze _ mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How to Build a GPS Navigation App Like Waze _ mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How to Build a GPS Navigation App Like Waze _ mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script type="text/javascript" async="" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/analytics.js.download"></script><script async="" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/gtm.js.download"></script><script async="" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="Everyone who often travels by car often faces the problem of navigation. Therefore, the idea to make a GPS navigation app is quite popular.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/gps-navigation-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/gps-navigation-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Build a GPS Navigation App Like Waze | mova.io">
+    <meta property="og:description" content="Everyone who often travels by car often faces the problem of navigation. Therefore, the idea to make a GPS navigation app is quite popular.">
+    <meta property="og:url" content="https://mova.io/blog/gps-navigation-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2019/03/0-2.jpg">
+    <meta property="article:published_time" content="2019-03-25T02:39:00.000Z">
+    <meta property="article:modified_time" content="2019-03-27T02:40:10.000Z">
+    <meta property="article:tag" content="android">
+    <meta property="article:tag" content="ios">
+    <meta property="article:tag" content="navigation">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Build a GPS Navigation App Like Waze | mova.io">
+    <meta name="twitter:description" content="Everyone who often travels by car often faces the problem of navigation. Therefore, the idea to make a GPS navigation app is quite popular.">
+    <meta name="twitter:url" content="https://mova.io/blog/gps-navigation-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2019/03/0-2.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="android, ios, navigation">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1333">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How to Build a GPS Navigation App Like Waze | mova.io",
+    "url": "https://mova.io/blog/gps-navigation-app/",
+    "datePublished": "2019-03-25T02:39:00.000Z",
+    "dateModified": "2019-03-27T02:40:10.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2019/03/0-2.jpg",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "android, ios, navigation",
+    "description": "Everyone who often travels by car often faces the problem of navigation. Therefore, the idea to make a GPS navigation app is quite popular.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/embed.js.download" data-timestamp="1553673086440"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><script src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-android tag-ios tag-navigation" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">Creating a GPS Navigation App - 7 Things to Consider</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2019-03-25">25 Mar 2019</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2019/03/0-2.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-android tag-ios tag-navigation">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps and Maps from Apple are not always enough: have many restrictions, no offline mode, and other known problems. How about creating an exciting alternative, which works perfectly offline, build routes taking into account the situation on the roads, show the weather forecast and in general make it easier to travel?</p>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/gps-navigation-app/#main">Main features</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#estimate">How to estimate waze app costs?</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#prices">Navigation application prices</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#how-to">How to create an app like waze?</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#monetization">Monetization</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#why">Why you should create a GPS app</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#popular">Popular applications</a></li>
+<li><a href="https://mova.io/blog/gps-navigation-app/#conclusion">Conclusion</a></li>
+</ol>
+<p>Nowadays, the choice of applications for navigation is huge! In addition, different products differ not only in functionality, but also in the approach to solving a problem (for example, one navigator will tell you that there is a shorter road, and the other will not even warn about this until you ask him). Therefore, it is not so easy for an ordinary smartphone user to make a choice, and it is your application that needs to stand out successfully among navigation apps like Waze.</p>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/1-4.jpg" alt="turn by turn navigation app"></p>
+<h2><a name="main">Main features</a></h2>
+<p>Among the great competition of mobile apps for GPS navigation, the main thing is to prioritize and identify the main functions and features of your application correctly. In this case, customers will distinguish your turn by turn navigation app from others.</p>
+<p>Do you want to know how to make a GPS app? Here are the main features that should be included in your app:</p>
+<ul>
+<li>Track road traffic status based on real-time traffic information (thanks to data provided by the user community)</li>
+<li>Voice navigation.</li>
+<li>Notification, reminder and warning systems. The application will warn you about the best way (monitors traffic jams in real time);</li>
+<li>Availability of maps that were edited and updated by a team of editors in real time.</li>
+<li>Automatic update of routes in accordance with road conditions.</li>
+<li>Memorizing places and frequent schedules.</li>
+<li>Ability to search for cheap gas stations along the way.</li>
+<li>Ability to add and view information about attractions and local businesses.</li>
+<li>Add Friends button from Facebook or other social networks. And use also the ability to synchronize contacts from your circle of friends.</li>
+<li>Calculation of the estimated time of friends’ arrival at the same destination.</li>
+</ul>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/2-6.jpg" alt="navigation apps like waze"></p>
+<p>Additional features:</p>
+<ul>
+<li>Offline mode: wherever you are - you will always know where to go;</li>
+<li>The ability to download cards to the device memory or SD card;</li>
+<li>Chat and the possibility of exchanging messages with friends;</li>
+<li>Interface gamification;</li>
+<li>Points system for frequent travelers;</li>
+<li>Weather forecasts at the destination;</li>
+<li>Useful information: fuel prices (at gas stations in the district), timetables for restaurants, cafes, etc. (very useful on the go, helps to save a lot of time);</li>
+<li>Three-dimensional maps;</li>
+<li>Onboard computer: control of speed, temperature, weather conditions, etc.;</li>
+<li>Ability to lay several routes (subject to different conditions). So you can choose the most optimal one;</li>
+<li>Integrations with different services like Google Calendar, Spotify, Social media.</li>
+</ul>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+If you need to <a href="https://mova.io/blog/gps-navigation-app/">create a social media app like Instagram</a>, or if you want to build a navigation app, contact us. The best mova.io specialists will help you to develop your idea to benefit your business and make a significant contribution to the development of the project.
+</div>
+<h2><a name="estimate">How to estimate waze app costs?</a></h2>
+<p>The price for the development of the application is not fixed and can be finally announced only after the assessment of the technical task. How much does the waze app cost?</p>
+<p>The cost of developing a mobile application may depend on many factors, including the complexity of the developed functionality, adaptability for a specific operating system, the number of screens in the application and the timing of the project.</p>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/3-5.jpg" alt="Navigation application development"></p>
+<p>Usually, the development team makes a preliminary quick estimate of the order cost.</p>
+<p>If the cost suits the customer, he signs a contract that calculates the exact price for developing the application, the deadline for the work and a description of the final result.</p>
+<p>Sometimes the price may change if during the development process it was decided to add additional functionality. However, it is always agreed with the customer.</p>
+<p>One of the leading activities of the mova.io company is the development of mobile applications for devices running on Apple devices. In the process of creating the product, we provide the best <a href="https://mova.io/services/ios">iOS application development services</a>, for those, who want to create a GPS app for iPhone.</p>
+<p>We are approached by those who are looking for reliable specialists for creating applications for business development and those who want to get a high-quality or exciting application for mobile devices. If you are interested in starting your own business and want to know how to make a gps navigation app, please contact us at <a href="mailto:mail@mova.io">mail@mova.io</a>.</p>
+<h2><a name="prices">Navigation application prices</a></h2>
+<p>How to make an app like waze, and how much it will cost? The process of creating an application for operating systems Android, iOS, consists of several stages:</p>
+<ul>
+<li>Free cost estimate (takes about 2 days);</li>
+<li>Research of the task, the market, and competition (about 5 days);</li>
+<li>Writing technical specifications depending on the complexity of the application (10-15 days);</li>
+<li>User interface design (15-30 days);</li>
+<li>Application development takes from 30 days to 4 months, or even more;</li>
+<li>Final application testing, polishing (10-20 days)</li>
+<li>Release to App Store and Play Store (2-5 days)</li>
+</ul>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/4-5.jpg" alt="GPS app prices"></p>
+<p>On average, navigation application prices start from $10,000 for one mobile platform (iOS or Android). This will include:</p>
+<ul>
+<li>iOS or Android application;</li>
+<li>back-end API server, that will save and synchronize data, authorize users, and more;</li>
+<li>admin panel, that will allow you to track everything in the apps;</li>
+<li>complete testing of the application and QA services;</li>
+<li>uploading and releasing applications into App Store and Google Play Store.</li>
+</ul>
+<p>Price depends a lot on a number of features, additional settings, user interface complexity. The mentioned price will only cover main features: places search, places details, route creation. More features will need more development time, and it will increase the price.</p>
+<p>If you would like to create applications for both platforms, iOS, and Android, the price will not be doubled in this case. We will be able to re-use API server, admin panel, and other similar services, so the price for a second platform will be much lower.</p>
+<p>The number of features and their detailed description is added to a document called specification. It also includes the number of hours needed for each particular feature, so client can be sure that the final bill for the work performed will be correct, and in accordance with the terms of reference, without unreasonable additional costs. Of course, if the client will decide to add changes or new features to the project down the road - they will be estimated and added to the specification as well.</p>
+<p>If the developed application is very complex, then parallel programming is carried out to speed up the delivery of work.</p>
+<p>It is important for us to notify the client about all the nuances regarding the creation of his project. Whether you decided to use iOS or <a href="https://mova.io/blog/gps-navigation-app/">Android application development services</a>, we try to inform the customer in detail about all ongoing operations at every stage of software development lifecycle, and truying to find the best possible solutions.</p>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/5-5.jpg" alt="waze app cost"></p>
+<h2><a name="">How to create an app like waze?</a></h2>
+<p>Any project begins with an analytical work and setting goals that must be achieved using the application. To do this, it is necessary to study the market, competition, target audience, trends, and experience in the field of interest. A detailed analysis makes it possible to clearly define business problems, their solutions, and the result.</p>
+<p>The full cycle of developing a mobile application is a long way from creating a concept to publishing a project, supporting and developing it.</p>
+<p><strong>1. Pre-planning</strong>, which includes developing the application concept, thinking through ways to monetize and create a marketing strategy.</p>
+<p><strong>2. Prototyping</strong> screens and interface of the future application.</p>
+<p>The prototype helps to work out the scripts for working with the application. Therefore, it is desirable to create interactive prototypes that can be launched into the phone and walk around the entire application, evaluate the convenience and get an accurate idea of what the final result will be.</p>
+<p><strong>3. Design</strong> research and work on the user interface design of the project. It is important to have a constant input from the project owner, to be sure that everything.</p>
+<p><strong>4. Application development</strong></p>
+<p>This is the main stage, and it is essential to always have feedback from the project owner. Correct and successful application implementation will depend a lot on the quality of feedback and communication between developer and client. It is crucial to test together the main functions of the navigation application, such as user location, map search, routing abilities, and so on.</p>
+<p><strong>5. Testing</strong></p>
+<p>Even though testing is a continuous work that we start on day one of application development, we still need to do the final test and polishing of the app before release. Using manual and automated tests, we make sure that application works well under different conditions, and with varying cases of edge. It is essential to test the app thoroughly, so users won't face any issues, bugs or crashes.</p>
+<p><strong>6. Release</strong> to the App Store and Play Store, and future maintenance of the project</p>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/6-5.jpg" alt="Waze app development stages"></p>
+<p>To speed up the development, it can be a good idea to use already existing services that will help to make navigation better:</p>
+<ul>
+<li><a href="https://developers.google.com/maps/documentation/directions/start">Google Maps Directions API</a>, <a href="https://developer.skobbler.com/">Skobbler</a> or <a href="https://developer.here.com/develop/mobile-sdks">HERE Maps</a> SDKs and <a href="https://www.mapbox.com/help/how-mapbox-works/">Mapbox</a> for geolocation app development;</li>
+<li><a href="https://cloud.google.com/apis/">Google Cloud API</a> or <a href="https://dialogflow.com/">API.AI</a> for voice recognition system;</li>
+<li><a href="https://developers.facebook.com/">Facebook API</a>, <a href="https://sendbird.com/">Sendbird Chat SDK</a> and <a href="https://layer.com/docs/">Layer SDK</a> for social networking elements (profiles, comments, and additional features)</li>
+</ul>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+Our team of professionals will effectively cope with the tasks of any complexity and subject. Therefore, if you want to <a href="https://mova.io/blog/how-to-build-music-app/">create a music app like SoundCloud</a> or make an app like waze in a very short time, contact us. We will create any type of application for small and medium businesses, corporate clients, online stores and other industries.
+</div>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/7-4.jpg" alt="how to build a gps app"></p>
+<h2><a name="monetization">Monetization</a></h2>
+<p>One possible way to monetize an app is location-based advertising. It is a kind of advertising platform for business owners who want to attract the attention of nearby drivers. Thus, while driving, the user of the application can see advertisements for nearby stores, restaurants, and other places.</p>
+<p>It is important to analyze not only the user’s location but also destination, in order to offer the most relevant ads. Local business owners can mark places on their cards by sending enticing messages and local advertisements to users who already travel nearby, for example, if they choose a place to eat.</p>
+<p>Another popular option is just the usual advertisements: banners, interstitials, and so on.</p>
+<p>Besides, you can create a navigation app and include a paid subscription that will provide an additional feature for users — starting from disabling advertisements for premium users, to unlocking new exciting features: maybe offline mode, better routing capabilities, and so on.</p>
+<h2><a name="why">Why you should create a gps app</a></h2>
+<p>In the past, people were guided by the stars. Not the most precise and easy way of navigationg the world. Now everything is much simpler - it is enough to get the phone out of your pocket, enter the right address into a navigation app, and the smart program will create a route. At the very beginning of the emergence and spread of the Internet, map services were extremely popular. Over time, technology has evolved, the display and functionality of maps have changed. Now many entrepreneurs want to make a navigation app.</p>
+<p>All this was made possible using GPS technology in the car navigators, and later, in smartphones. This technology allows anywhere in the Earth (excluding the circumpolar regions), in almost any weather, as well as in near-Earth space to determine the location and speed of objects. The basic principle of using the system is to determine the location by measuring the time points for receiving a synchronized signal from navigation satellites by the consumer’s antenna.</p>
+<p>At the moment, GPS - navigators for the smartphone are the most popular product. There are many applications for every taste and color.<br>
+Regardless of the type of your business, in today's fast-paced rhythm, when every minute counts, monitoring the movement of vehicles becomes a necessity. However, the use of a GPS-monitoring system is especially important for a taxi, passenger transport, freight, and courier delivery. In addition, such an application is very popular among tourists.</p>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/8-4.jpg" alt="Popular navigation applications"></p>
+<h2><a name="popular">Popular applications</a></h2>
+<p><strong>Waze</strong></p>
+<p>Waze is a navigation application developed by a community of enthusiasts. Displays traffic on the roads in real time; notifies of accidents and traffic jams, notifies about the cameras. Adapted to the road conditions of most countries in the world.</p>
+<p>In the Waze app for Android, there is no obvious function to save maps offline (for example, like in Google Maps). From time to time, the navigator requires an Internet connection to complete the work. However, there are some workarounds for downloading offline maps.</p>
+<p><strong>Google Maps</strong></p>
+<p>Google Maps is another decent navigation app with support for autonomous work and offline browser for Android / iOS.</p>
+<p>This is a universal app from Google. Millions of customers use it not only on navigators but also on ordinary phones. The application knows about the roads in 220 countries of the world! In addition, Google Maps knows everything in the area. The application can:</p>
+<ul>
+<li>report on road loads (where are traffic jams, where is repair),</li>
+<li>find the fastest mode of transport to move from point A to point B,</li>
+<li>tell you where the nearest cafe or restaurant</li>
+<li>recommend the sights of the city (district), and much more.</li>
+</ul>
+<p><strong>Apple Maps</strong></p>
+<p>Apple Maps are way yonger then Google's product, and therefore still has some problems - not all places are available on map, not all routes are the fastest one, and so on. However, it includes lots of interesting features:</p>
+<ul>
+<li>beautiful and user friendly interface</li>
+<li>weather forecasts</li>
+<li>Foursquare integration for most popular places</li>
+<li>3D Map</li>
+</ul>
+<p><img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/11-2.jpg" alt="GPS application design"></p>
+<h2><a name="">Conclusion</a></h2>
+<p>We hope that this article was interesting for you and you have a desire to make a GPS navigation app that becomes a competitor for many navigation apps like waze.</p>
+<p>mova.io experts will be happy to offer you to develop a navigation app, or any other type of mobile application. Our main goal is not just to make another app, but to help you make a sustainable business of it, and to help your users to resolve their problems.</p>
+<p>If you have an idea to create an app like waze, do not stop there. We will help you to make a navigation app for Android or iOS, as well as we will help you to release it to App Store and play market, improve it after the release to achieve the best results in a competing market.</p>
+<p>So let's evaluate, compare and develop the best plan for your startup with our highly qualified mova.io specialists.</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+<div>Have a question? Just write to us at:</div>
+<span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+<div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+.some-style { color: #fafafa; }
+</style>
+      </section>
+
+      <section class="post-info" data-gtm-vis-recent-on-screen-10579059_27="34989" data-gtm-vis-first-on-screen-10579059_27="34989" data-gtm-vis-total-visible-time-10579059_27="500" data-gtm-vis-has-fired-10579059_27="1">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=Creating%20a%20GPS%20Navigation%20App%20-%207%20Things%20to%20Consider&amp;url=https://mova.io/blog/gps-navigation-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/gps-navigation-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/gps-navigation-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/android/">android</a> <a href="https://mova.io/blog/tag/ios/">ios</a> <a href="https://mova.io/blog/tag/navigation/">navigation</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/ecommerce-mobile-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/02/black-friday-buy-computer-34577.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Why your E-commerce​ Store Needs a Mobile Application</h2>
+		              <p class="post-nav-excerpt">According to Google 2017-2018, 68% of smartphone owners use their devices for mobile shopping app, and 66% of them make purchasing decisions with a smartphone at least once a week.…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-android tag-ios tag-navigation">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app3209" name="dsq-app3209" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 640px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 640px !important; max-width: 640px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 640px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 640px !important; max-width: 640px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/saved_resource(2).html"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/gps-navigation-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5c98ab79283a160546bc9838"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-android tag-ios tag-navigation"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.1352026679505407" frameborder="0" width="100%" height="50px" scrolling="no" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/count.js.download" async=""></script>
+
+
+<script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><iframe style="display: none;" src="./How to Build a GPS Navigation App Like Waze _ mova.io_files/saved_resource(3).html"></iframe><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

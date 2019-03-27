@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/ -->
+<html lang="en" class="cover-active" style="cursor: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How to Make a Conference App for your Event?</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How to Make a Conference App for your Event__files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How to Make a Conference App for your Event__files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How to Make a Conference App for your Event__files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How to Make a Conference App for your Event__files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script type="text/javascript" async="" src="./How to Make a Conference App for your Event__files/analytics.js.download"></script><script async="" src="./How to Make a Conference App for your Event__files/gtm.js.download"></script><script async="" src="./How to Make a Conference App for your Event__files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How to Make a Conference App for your Event__files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="mova.io developers will help you understand how to make your own native conference app for iOS or Android: technologies, timeframes, costs, and more.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to Make a Conference App for your Event?">
+    <meta property="og:description" content="mova.io developers will help you understand how to make your own native conference app for iOS or Android: technologies, timeframes, costs, and more.">
+    <meta property="og:url" content="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2018/11/5.jpg">
+    <meta property="article:published_time" content="2018-09-25T05:22:29.000Z">
+    <meta property="article:modified_time" content="2019-03-19T07:06:58.000Z">
+    <meta property="article:tag" content="mobile">
+    <meta property="article:tag" content="app">
+    <meta property="article:tag" content="conference">
+    <meta property="article:tag" content="how-to">
+    <meta property="article:tag" content="estimation">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Make a Conference App for your Event?">
+    <meta name="twitter:description" content="mova.io developers will help you understand how to make your own native conference app for iOS or Android: technologies, timeframes, costs, and more.">
+    <meta name="twitter:url" content="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2018/11/5.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="mobile, app, conference, how-to, estimation">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1333">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How to Make a Conference App for your Event?",
+    "url": "https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/",
+    "datePublished": "2018-09-25T05:22:29.000Z",
+    "dateModified": "2019-03-19T07:06:58.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2018/11/5.jpg",
+        "width": 2000,
+        "height": 1333
+    },
+    "keywords": "mobile, app, conference, how-to, estimation",
+    "description": "mova.io developers will help you understand how to make your own native conference app for iOS or Android: technologies, timeframes, costs, and more.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How to Make a Conference App for your Event__files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How to Make a Conference App for your Event__files/embed.js.download" data-timestamp="1553673548370"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><script src="./How to Make a Conference App for your Event__files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-mobile-2 tag-app-tag-2 tag-conference tag-how-to-3 tag-estimation-2" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">How to Make a Conference App for your Event?</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2018-09-25">25 Sep 2018</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2018/11/5.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-mobile-2 tag-app-tag-2 tag-conference tag-how-to-3 tag-estimation-2">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>Events and conferences market is growing well: only in a year market's size increased by <strong>1 billion</strong> USD: from 29.3 billion to 30.3 billion U.S. dollars (according to <a href="https://www.statista.com/statistics/579094/exhibition-industry-revenue/">Statista</a>). Just in the US, the events industry has spent around $325 billion and gained around <em>$845 billion in business sales</em> (<a href="http://www.meetingsmeanbusiness.com/sites/default/files/OE-EIC%20Meetings%20Significance%20-%202018-February.pdf">Oxford Economics and Events Industry Council, 2018</a>). Isn't it interesting?</p>
+<p><img src="./How to Make a Conference App for your Event__files/conference.jpg" alt="Conference Mobile App: Trends"></p>
+<p>Let's think how mobile app can help to save time and money for both organizers and attendees:</p>
+<ul style="list-style-type:none; padding: 0;">
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/calendar.png" class="list-icon">
+        showing an up-to-date <b>schedule</b> and speakers list;</li>
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/notification.png" class="list-icon">
+        sending announcements about changes and updates to all the users;</li>
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/desc.png" class="list-icon"><div><b>interactive description</b> of each event. Not just a text, but with a video preview, links to speaker social profiles, chat, and more;</div></li>
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/pay.png" class="list-icon"><b>booking tickets</b> right from the app with a couple of taps;</li>
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/venue.png" class="list-icon">helping find a venue, nearest place for a snack;</li>
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/social.png" class="list-icon">always available <b>customer support</b>;</li>
+    <li class="nostyle">
+        <img src="./How to Make a Conference App for your Event__files/more.png" class="list-icon">and much, much more!</li>
+</ul>
+<p>Isn’t it great? Most of the conferences already have the application which helps their users to save time, feel more connected, helps with networking and helps not to feel lost.</p>
+<p>So, what does it take to make a native <a href="https://mova.io/services/ios">iOS</a> app for iPhones and iPads, or an <a href="https://mova.io/services/android/">Android</a> application, how much time development will take, and most important, how much event app development costs?</p>
+<p>First, let’s think about the main sections of the mobile app for conferences that you might need. 90% of the app have next:</p>
+<ul>
+<li>Registration and Login (optional)</li>
+<li>Event schedule</li>
+<li>Speakers List</li>
+<li>Details about each particular program: Speaker name, main topic, and so on</li>
+<li>Notifications. Usually, it is an excellent way to post some announcements, schedule changes, and so on</li>
+<li>Map: helps attendees to get to your venue, and reminds them where each program will be</li>
+<li>Tickets Booking. These days it is not nice to redirect people to some weird places to buy tickets</li>
+<li>Customer Service. People usually have many questions, and we need to help them!</li>
+<li>Social features: conferences and events are all about networking, so we need to help people connect with each other</li>
+<li>Admin panel, to see the list of users, manage speakers and their programmes, post updates, and more.</li>
+</ul>
+<p>Let’s talk about each section in detail, and figure out how to make an event app. Why we need it, how to develop it, and how much time (and money) it will need.</p>
+<hr>
+<p><em>in case you are not interested in event and conference apps, just get in touch to get an estimation for your application. Or you can browse our <a href="https://mova.io/estimations/">interactive estimations as well.</a></em></p>
+<hr>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#login">Login and Registration</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#schedule">Event Schedule</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#speakers">Speakers List</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#program">Program Details</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#notifications">Notifications</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#map">Map</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#booking">Tickets Booking</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#service">Customer Service</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#social">Social Features</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#admin">Admin Panel</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#technologies">Technologies</a></li>
+<li><a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/#conclusion">Conclusion</a></li>
+</ol>
+<hr>
+<p><img src="./How to Make a Conference App for your Event__files/registration.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="login">Login and Registration</a></h2>
+It is a good idea to let people create an account. First, it will allow them to save time, for example when booking tickets. We could save all their personal info so they won't have to fill it in each time they book a new ticket.
+<p>Besides, you will have more info about your customers, which is beneficial for startups. The more you know about your audience, the better results you will have with targeting: theme can be slightly updated for your audience tastes, speakers will be able to adjust their program accordingly, and even sponsors will be happier. Win-win, no?</p>
+<p>Technically, registration is simple. We gather all the info filled by user in the registration form, and we send it to the back-end server. The server will process all the info and will save it into the database. The only customizable part here is a user interface (the design), a number of questions you would like to ask your user (name, address, maybe payment methods, and so on), and possible social integrations (login with Facebook or Google account, for example).</p>
+<p>Average registration and login process can take around three days. Depending on an hourly rate and developer experience, prices can differ. Let's just take a $35 hourly rate as an average for this article, so it will be easier to make an estimation. So, three days, 24 working hours, or <strong>$840</strong> for a complete registration and login package.</p>
+<p>These three days will allow event app developers to make a stunning user interface where new users will be able to create accounts and provide all the data we need, and existing users to log in with their email and password. We will also take care of the logic that sends all the data to the server, processes it, and saves to the database. And, of course, testing. We don't want users to sign up with fake or incorrect email addresses. We don't want users to have duplicated accounts. We don't want them to be able to login into other accounts, and so on.</p>
+<p><img src="./How to Make a Conference App for your Event__files/calendar.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="schedule">Event Schedule</a></h2>
+<p>This is a most obvious section of the application. We need to let people know when and where each event will take place. It is extremely important for conferences where different events will happen at the same time, in various venues.</p>
+<p>There are two ways to implement it. First one is a cheaper way: <strong>static calendar</strong> (around 12-16 hours of work, or about $500). The second one is a more sophisticated, but more expensive: dynamic calendar which will synchronize events schedule with your admin panel (24-32 hours of work, around $1,000)</p>
+<p>For a user, there will be no difference on first sight. He will see the same events on the same screen. However, if something went wrong, and you had to change the schedule - we will have to upload a new app to the App Store and Play Store if we go with static.</p>
+<p>If we choose a <strong>dynamic calendar</strong>, whenever a user opens the app, we will pull all the new data from the server and will show the freshest data available.</p>
+<p>Another nice touch to your event mobile planning app is to allow the user to add each event to his own calendar, where can then invite others, add notifications and reminders, and more. Additional 3-4 hours of work, and additional WOW-moment for a user.</p>
+<p><img src="./How to Make a Conference App for your Event__files/speakers.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="speakers">Speakers List</a></h2>
+<p>In addition to Schedule, it is a good idea to add a list of speakers. It will allow your customers to learn more about each speaker, their experience, social media profiles, meeting details, and more. You can list all his programs at your conference as well, so attendees will be able to find their speeches easier.</p>
+<p>Technically, this part does not have anything difficult. Just a list of speakers, and their details. As with the Schedule, we can make it static (8-12 hours, or $350) or dynamic (18-26 hours, or $840). Static is a good choice if you are sure that there will be no changes in the app. Otherwise, we would have to upload a new version to the App Store and Play Store to make list updates. With dynamic, the user will always have up-to-date information about your conference speakers.</p>
+<p><img src="./How to Make a Conference App for your Event__files/people.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="program">Program Details</a></h2>
+<p>Of course, a schedule is a very important part of the app, but users won't understand much about each speech without a good description. Usually, program details are a beautiful and colorful screen, which primary goal is to attract people to attend each event. So we should add pretty images, videos, interesting descriptions, and so on.</p>
+<p>I think you can guess already, that this part also can be static (8-12 hours, depending on a user interface design, number of elements, and so on), or dynamic (can be updated from admin panel. Might take around 18-26 hours, and would cost ~$840).</p>
+<p>It can also be beneficial to add a program finder, which will help users to find an interesting program for him by a keyword. It will need an additional couple of days, but it will save much time for your users.</p>
+<p><img src="./How to Make a Conference App for your Event__files/notifications.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="notifications">Notifications</a></h2>
+<p>Sometimes we need to notify users about something. Changed schedule, announcements, news, and much more. There are no events that don't need notifications. It helps to stay in a user's sight and keep them involved.</p>
+<p>This part will need a lot of development on the back-end and in the <strong>admin panel</strong>. Technically, the only thing that mobile app will need to do is fetch and show all the latest notifications. Moreover, the admin panel should provide an interface for making a new announcement, saving it, and sending it to all the phones with your event management app.</p>
+<p>On average, this section can take around 30 hours. With an average $35 hourly rate, it can cost about $1,050 to develop.</p>
+<p><img src="./How to Make a Conference App for your Event__files/map.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="map">Map</a></h2>
+<p>Hosting a big event in a huge multi-story building or expecting people from other cities and countries? In this case, it might be a good idea to show attendees on a map where your event will take place. Besides, it is nice to have a plan of a building, with all the rooms marked. It will help users to understand where each event will be, and how to get there.</p>
+<p>Depending on the implementation, this can take 2-3 days with the approximate cost of $700.</p>
+<p><img src="./How to Make a Conference App for your Event__files/payment.jpg" alt="Conference Mobile App: Trends"></p>
+<h2><a name="booking">Tickets Booking</a></h2>
+<p>If the user already downloaded your app, he might want to book a ticket for himself or his colleagues or friends. Of course, you can redirect them to some website which will handle tickets selling for you. However, in that case, you won't be able to customize the flow that much.</p>
+<p>There are two most popular ways to add payments to your app to buy tickets:</p>
+<ul>
+<li><strong>In-App purchases</strong>. In this case, Apple or Google will take a small percentage from each payment, but this way feels more native than others.</li>
+<li><strong>Credit Card payments</strong>. Here we would need to use 3rd-party services like Stripe, which would help us to process payments.</li>
+</ul>
+<p>Payment is a complex process, which needs to be well-tested - there are lots of possible edge cases. What to do if payment did not go through? What to do if a credit card is expired? To make sure that neither application owners nor users will lose money, we will need to make sure that booking system is bulletproof. On average, it can take around 30 hours and $1,050 to process payments, and allow users to buy tickets.</p>
+<h2><a name="service">Customer Service</a></h2>
+<p>Even if you have a most detailed description of all the events and full biographies of your speakers, customers will still have some questions. We will need to implement some kind of a feedback section into the app.</p>
+<p>The easiest way is just to allow a user to send you emails. This will take only a couple of lines of code.</p>
+<p>Another way is to have a custom in-app chat. Depending on a budget and level of customization we could use third-party libraries (like Intercom), or implement it ourselves from scratch. This can take from 4 hours (with the help of paid libraries) to 40 hours (if we decide to make own solution).</p>
+<h2><a name="social">Social Features</a></h2>
+<p>Conferences are all about <strong>networking</strong>. Of course, people are interested to hear something new, but most of them are excited to connect with like-minded people. Social features can include absolutely everything: from comments to each event to indicating attendees. From a real-time chat for everyone to talk about the event, or questions page, where customers can ask questions to each speaker.</p>
+<p>Depending on what you need, the estimation for social features for a event registration app will differ a lot. Usually, it is not something difficult, and you can expect 15-30 hours per each social feature. Just comment below if you have a question or need a more precise estimation for a function.</p>
+<div class="portoflio-desc">
+    <a href="https://mova.io/estimations/whatsapp/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How to Make a Conference App for your Event__files/cover.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Estimations: WhatsApp</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            Networking is important at every conference. However, how to keep users connected even after the event? Of course with a messenger app! Messenger apps are one of the biggest markets at the moment. Curious how much they cost? Check our interactive estimations. So when you are ready to start development - write to us at mail@mova.io
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="admin">Admin Panel</a></h2>
+<p>Whether you would like to build a local event app or an app for a global conference, you will definitely need an admin panel. An average panel should have:</p>
+<ul>
+<li>list of users</li>
+<li>a way to update schedule and speakers</li>
+<li>notifications management</li>
+<li>list of transactions<br>
+and more.</li>
+</ul>
+<p>Depending on the level of customization, the average admin panel takes around three weeks to implement and costs around $4,000. Of course, if we will have more features, the time for development and costs will be increased. Alternatively, if you don't need the admin panel to update schedules (in case you prefer static schedule and speakers list) - it will save you a lot of time and money as well.</p>
+<h2><a name="technologies">Technologies</a></h2>
+<p>Conference applications are not that difficult, so it can be done almost with every tech-stack possible.</p>
+<p>To build a conference management app, we always suggest going with <strong>native applications</strong> if possible. It will allow you to make a stunning interface, high performance, and best user experience possible.</p>
+<p>For the <a href="http://mova.io/services/web/">back-end</a>, it might be a good idea to go with Ruby on Rails. This framework helps to increase development speed and to make maintenance easier and cheaper.</p>
+<h2><a name="conclusion">Conclusion</a></h2>
+<p>So let's finally calculate how much time it takes to make a conference application with a back-end server. Let's assume you would like to start with <a href="https://mova.io/services/ios/">iOS</a> for now, and you prefer an app with dynamic updates.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Average Development Time</th>
+<th>Approximate Price ($35/h)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Welcome Screen</td>
+<td>4</td>
+<td>$150</td>
+</tr>
+<tr>
+<td>Login and registration</td>
+<td>24</td>
+<td>$840</td>
+</tr>
+<tr>
+<td>Event Schedule</td>
+<td>30</td>
+<td>$1050</td>
+</tr>
+<tr>
+<td>Speakers List</td>
+<td>24</td>
+<td>$840</td>
+</tr>
+<tr>
+<td>Event Details</td>
+<td>24</td>
+<td>$840</td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td>30</td>
+<td>$1050</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>20</td>
+<td>700</td>
+</tr>
+<tr>
+<td>Tickets Booking</td>
+<td>30</td>
+<td>$1050</td>
+</tr>
+<tr>
+<td>Customer Service</td>
+<td>4</td>
+<td>$140</td>
+</tr>
+<tr>
+<td>Social Features</td>
+<td>24</td>
+<td>840</td>
+</tr>
+<tr>
+<td>Admin Panel</td>
+<td>120</td>
+<td>$4000</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>334h or 11 weeks</td>
+<td><strong>$11,500</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So, to develop one native application, API server, and an admin panel, we would need around 11 weeks (3 months) and $11,500. App for the second platform will be much cheaper because there is no need to write a second API server and admin panel.</p>
+<p>Of course, price depends a lot on user interface complexity, number of screens, additional settings, and features. So depending on a budget, the price can always be changed by simplifying or improving the user interface, making some sections static, and so on.</p>
+<p>If you would like make an app for conferences and events, (or to talk about any other app ideas), just drop us a line. We will try to make a precise estimation for your exact case, for your event type, and your target audience. Just write directly to <a href="mailto:mail@mova.io">mail@mova.io</a>, or <a href="https://mova.io/contacts/">tell us more about your idea</a>, and we will contact you soon with a proposal.</p>
+<p>Would like to hire software developers for some other app ideas? No problem! Just let us know what you need, and we will help you to build it!</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+    <div>Have a question? Just write to us at:</div>
+    <span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+    <div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+  .some-style { color: #fafafa; }
+</style>
+      </section>
+
+      <section class="post-info" data-gtm-vis-recent-on-screen-10579059_27="78139" data-gtm-vis-first-on-screen-10579059_27="78139" data-gtm-vis-total-visible-time-10579059_27="500" data-gtm-vis-has-fired-10579059_27="1">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=How%20to%20Make%20a%20Conference%20App%20for%20your%20Event?&amp;url=https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/mobile-2/">mobile</a> <a href="https://mova.io/blog/tag/app-tag-2/">app</a> <a href="https://mova.io/blog/tag/conference/">conference</a> <a href="https://mova.io/blog/tag/how-to-3/">how-to</a> <a href="https://mova.io/blog/tag/estimation-2/">estimation</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How to Make a Conference App for your Event__files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/gps-navigation-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Creating a GPS Navigation App - 7 Things to Consider</h2>
+		              <p class="post-nav-excerpt">How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-mobile-2 tag-app-tag-2 tag-conference tag-how-to-3 tag-estimation-2">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app8912" name="dsq-app8912" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to Make a Conference App for your Event__files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5ba21ef70773550001455df5"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-mobile-2 tag-app-tag-2 tag-conference tag-how-to-3 tag-estimation-2"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How to Make a Conference App for your Event__files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How to Make a Conference App for your Event__files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.13019148928769653" frameborder="0" width="100%" height="50px" scrolling="no" src="./How to Make a Conference App for your Event__files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How to Make a Conference App for your Event__files/count.js.download" async=""></script>
+
+
+<iframe style="display: none;" src="./How to Make a Conference App for your Event__files/saved_resource(1).html"></iframe><script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

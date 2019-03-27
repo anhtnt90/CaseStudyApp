@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://mova.io/blog/how-to-create-a-fitness-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How To Make a Fitness App - mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How To Make a Fitness App - mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How To Make a Fitness App - mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How To Make a Fitness App - mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How To Make a Fitness App - mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script type="text/javascript" async="" src="./How To Make a Fitness App - mova.io_files/analytics.js.download"></script><script async="" src="./How To Make a Fitness App - mova.io_files/gtm.js.download"></script><script async="" src="./How To Make a Fitness App - mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How To Make a Fitness App - mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="Have some fresh ideas, and want to make a fitness app for iOS or Android? We describe how to prepare for development, and how to create a successful app.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/how-to-create-a-fitness-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/how-to-create-a-fitness-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How To Make a Fitness App - mova.io">
+    <meta property="og:description" content="
+Have some fresh ideas, and want to make a fitness app for iOS or Android? We describe how to prepare for development, and how to create a successful app.">
+    <meta property="og:url" content="https://mova.io/blog/how-to-create-a-fitness-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2018/12/0-1.jpg">
+    <meta property="article:published_time" content="2018-12-20T13:58:24.000Z">
+    <meta property="article:modified_time" content="2019-03-18T06:40:57.000Z">
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How To Make a Fitness App - mova.io">
+    <meta name="twitter:description" content="
+Have some fresh ideas, and want to make a fitness app for iOS or Android? We describe how to prepare for development, and how to create a successful app.">
+    <meta name="twitter:url" content="https://mova.io/blog/how-to-create-a-fitness-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2018/12/0-1.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1333">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How To Make a Fitness App - mova.io",
+    "url": "https://mova.io/blog/how-to-create-a-fitness-app/",
+    "datePublished": "2018-12-20T13:58:24.000Z",
+    "dateModified": "2019-03-18T06:40:57.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2018/12/0-1.jpg",
+        "width": 2000,
+        "height": 1333
+    },
+    "description": "\nHave some fresh ideas, and want to make a fitness app for iOS or Android? We describe how to prepare for development, and how to create a successful app.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How To Make a Fitness App - mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How To Make a Fitness App - mova.io_files/embed.js.download" data-timestamp="1553673499356"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><script src="./How To Make a Fitness App - mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">How to Create a Fitness App</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2018-12-20">20 Dec 2018</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2018/12/0-1.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>Every person always wants to be healthier and look better. However not every person has enough time for it: long working hours, commute between home and office, additional responsibilities, and other things eating all our time. However, a simple thing such as a smartphone can help a lot of people to achieve these goals: look fit, and be healthier.</p>
+<p>According to the <a href="https://www.ihrsa.org/publications/the-2017-ihrsa-global-report">latest IHRSA report</a>, fitness industry revenue was about $81bn in 2015 and grew to $83.1bln in 2016.</p>
+<p>If you have new exciting fitness app ideas that would help its users to be fit and achieve their goals, it won't be a problem to make a new application that will attract users. But what it takes to create a fitness app? How to find good developers, and how to make sure the app has all the essential features? Let's figure out!</p>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/how-to-create-a-fitness-app/#types">Fitness App Types</a></li>
+<li><a href="https://mova.io/blog/how-to-create-a-fitness-app/#process">Development process</a></li>
+<li><a href="https://mova.io/blog/how-to-create-a-fitness-app/#sections">Main Application sections</a></li>
+<li><a href="https://mova.io/blog/how-to-create-a-fitness-app/#business-model">Business Model</a></li>
+<li><a href="https://mova.io/blog/how-to-create-a-fitness-app/#summary">Summary</a></li>
+</ol>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+We are mova.io - <a href="https://mova.io/services/ios/">iOS app development company</a>. We made apps that are used by 1,000,000+ users monthly. They were mentioned by TechCrunch, LifeHacker, LA Times, The Washington Post, 9to5Mac, and others. <a href="https://mova.io/contacts/">Let us know</a> if we can help with your projects.
+</div>
+<h2><a name="types">Fitness App Types</a></h2>
+<p><img src="./How To Make a Fitness App - mova.io_files/1.jpg" alt="Fitness Application - Types"></p>
+<p>Before thinking about how to make a fitness app, let's talk about different fitness app types. Main categories are:</p>
+<ul>
+<li>
+<p>Trainer applications;</p>
+</li>
+<li>
+<p>Workout apps that help track progress;</p>
+</li>
+<li>
+<p>Apps that help a user find a trainer.</p>
+</li>
+</ul>
+<p>Let's check each of them closer.</p>
+<h2>Trainer Applications</h2>
+<p>These have a massive database with different workouts, for different body types, different skills and levels, and more. Trainer application allows a user to set his goal, set his parameters, and the app will make a fitness program for him to achieve his personal goal. For example, trainer applications for running can ask the user about his experience: whether he never ran before, or already ran a marathon. Then it will ask him what he would like to achieve: the first 5k for a newbie, or a marathon for an advanced user. After those simple questions, the application will generate a program for him, will make a plan, and the user will only need to follow everything, to achieve his desired results.</p>
+<p>Great example of the triner application is <a href="https://mova.io/portfolio/zygo">Zygo</a>. When we worked on this application, its primary goal was to help users find exciting workouts for water sports and guide them through audio tracks. If you like swimming - try this app, we hope it will help you to achieve new records!</p>
+<p><img src="./How To Make a Fitness App - mova.io_files/nike1.jpg" alt="Fitness Application - Strong Workouts Library"></p>
+<h2>Progress Tracking Apps</h2>
+<p>This is a traditional fitness application. The best example is an app for gym workouts: it allows the user to create his routine, and track the progress each time he is in the gym. The app will enable him to track his current results (sets, reps, weights, and more). Will show him useful information that can help him progress further. Some apps also help with user's diet - they allow users to track calories, macronutrients, and other vital parameters.</p>
+<h2>Apps that help find a trainer</h2>
+<p>These work similar to Uber application. They allow the user to sign up, choose his favorite activity type, his location, and the app will show him best trainers around. Of course, the app will also have a Trainer-side application, which will allow Trainers to register, fill all their info, post their achievements, certifications, reviews, and more.</p>
+<p>These fitness apps are more difficult to develop (because there are two apps inside one - for the user and a trainer), but they can be easier to monetize. By the way, we already made something similar. Please check the LyvFit application: <a href="http://mova.io/portfolio/lyvfit">Portfolio: LyvFit</a></p>
+<div class="portoflio-desc">
+    <a href="http://mova.io/portfolio/lyvfit/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How To Make a Fitness App - mova.io_files/transparent.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Portfolio: LyvFit</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            We love fitness, and makeing sport applications! One of the examples is LyvFit - uber-like app that connects users and trainers. LyvFit is packed with tons of exciting features: payments, chats, geolocation, reviews, verifications, and much more. Want to create a stunning sports application with gorgeous design? Just write to us at mail@mova.io
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="process">Development process</a></h2>
+<p><img src="./How To Make a Fitness App - mova.io_files/2.jpg" alt="Fitness Application - Development Process"></p>
+<p>In this article, we talk about a traditional progress tracking application. However, we are going to cover others soon as well.</p>
+<p>So, how to create a fitness app? What does it take to develop a workout app for iOS or Android? Let's see.</p>
+<p>First of all, we will need an idea and precise specifications. How the app will work, how it will engage users, and how it will help them achieve their goals. It is also important to think about the business model, how the application will be able to generate revenue for its owners? Premium features, advertisements, paid programs or subscriptions?</p>
+<p>The most important thing is to make the easy to use. If we are making an app for sports and fitness - most of the time user won't be able to look for a feature. It has to be easily accessible - athlete in the gym, or runner won't be happy to pause the workout just to find a button in the app.</p>
+<p>App also has to help people achieve their goals. If the app will look great and fast, but won't do what user needs - there is no way the user will stick to it. If we make an app that helps people work out in the gym - it has to have all the main features that will help the user, such as:</p>
+<ul>
+<li>write down all the weights, reps, and sets;</li>
+<li>track the progress of a current workout;</li>
+<li>track overall progress: view stats and graphs;</li>
+<li>view history of all previous workouts;</li>
+<li>have a library of exercises or the ability to add custom exercise;</li>
+</ul>
+<p><img src="./How To Make a Fitness App - mova.io_files/fmp.jpg" alt="Fitness Application - MyFitnessPall"></p>
+<p>And of course, the app has to be beautiful. There are lots of apps that do what they have to. But if the app does not feel right, and looks boring - the user is likely to switch to a competitor. Also, there are lots of examples where the app is fine, but some features are lacking. In those cases, users are only staying because of the design or excellent user experience.</p>
+<p>But to really keep the user with us, we need some killer feature, something that is not available in other apps. Workouts made using Artificial Intelligence for particular user's needs? Using Augmented Reality to show the correct form of each exercise with 3D athletes? These are just examples from the top of the head. There are lots of other great ideas waiting to be implemented!</p>
+<p>When basics are ready, we can start to think about wireframes and design. It is essential to build a fitness app that is fast, intuitive, and simple to use. When in a gym, or when running - user won't be able to browse all those menus to find how to start a workout. Everything has to be dead simple, and accessible with one tap (or even without taps, if possible).</p>
+<p>When designs are ready, we can start about the tech stack. Usually, fitness application has the next parts:</p>
+<ul>
+<li>
+<p>iOS application, usually done with Swift;</p>
+</li>
+<li>
+<p>Android application. Developers can use Java or Kotlin to make a native app</p>
+</li>
+<li>
+<p>Back-End server (API) to save and synchronize all the data. There are lots of technologies that can be used for this. Technically, sports application are not that difficult so it can be done with Ruby on Rails, Node.js, hosted on Firebase, Amazon AWS, or any other solution.</p>
+</li>
+</ul>
+<p>If you have questions about tech stack or would like to know what works best for your project, <a href="https://mova.io/contacts/">contact us</a>, and we will help!</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+Our <a href="https://mova.io/services/android/">Android app development company</a> consists of experienced developers who worked on a wide range of projects, and always ready to help. Thinking about app development? Just <a href="https://mova.io/contacts/">let us know</a>!
+</div>
+<h2><a name="sections">Main Application sections</a></h2>
+<p><img src="./How To Make a Fitness App - mova.io_files/3.jpg" alt="Fitness Application - Types"></p>
+<p>Which sections and features each sports application should have? Let's see!</p>
+<h3>Login and Registration</h3>
+<p>If you plan to allow users to track and save their progress, we will need to create accounts for them. It will help us saving data, and making sure everything is synchronized between the application and the server. There are multiple ways to create accounts. Classic email and password registration. Phone number with SMS verification. Social logins, and others.</p>
+<p>Depending on your goals, you can choose any of them, or even combine. Want users to signup faster, and provide all the main info with a couple of taps? Go with Social logins. Would like to allow a user to provide some additional data? In this case, email registration can work well.</p>
+<p>Development of authentication and authorization flow depends a lot on the elected way. However, on average, 40 hours are completely fine to make the basic registration. The price for this will be around $1,400.</p>
+<p><img src="./How To Make a Fitness App - mova.io_files/nike.jpg" alt="Fitness Application - Nike Workouts Library"></p>
+<h3>Workouts Library: List of Workouts, and Workout Info.</h3>
+<p>This part is crucial. The more workout programs your app will have, the better. If workouts can be personalized - it is even better. And of course - Workout details should look stunning, so the user will want to try them right away.</p>
+<p>Technically, basic workouts library is easy to develop. We only need to create all the records in the database and show them in the list. However, in most cases, it won't be enough. Ideally, we should have an admin panel that will allow project owners to create, edit and delete workouts. Updated workouts library will be then synced to the application, and it will ensure that application always has the latest workouts data. Even more - we will not even need to post new applications to the App Store or Play Market to make these changes to workouts.</p>
+<p>Except creating new workouts, admin panel will also help to keep track of most popular workouts, so you will know what users are interested in, and how to proceed.</p>
+<p>Another step forward would be personalized workouts. If you take running - we could ask the user about his experience, and provide a personalized program for him. If he is a newbie - he might need 3 months to run his first 5k. If he ran before, we could ask him his records, and adjust the program accordingly.</p>
+<p>Using Artificial Intelligence (AI) we could also try to personalize workouts even more. For example, a user could set his goal (for example, losing some weight), describing his current parameters (activity levels, weight, and so on), we could tailor a personalized workout for him.</p>
+<p><img src="./How To Make a Fitness App - mova.io_files/strong.jpg" alt="Fitness Application - Strong Workouts Library"></p>
+<p>Personalized programs will be helpful for both sides: to you, as a project owner, and to your users. For users, the average program might not always be okay. Some might need more time to achieve their goals. Others might not be able to do all the exercises, and they will need to figure out replacements. For a project owner, this is an excellent opportunity for monetization. The better your workout programmes, the more people will be happy to use your app, and even pay for unique workout programmes.</p>
+<p>Development of a workout library takes at least 2 weeks ($2,800). Additional features like workout editor, personalization and others will increase the development time and prices accordingly.</p>
+<p>To make Workouts Library more exciting and helpful to the user, it is a good idea to add photos and videos of each exercise. It will also dramatically increase the chances that user will stay, and will continue using the app. We all know that feeling when something has been described in the text, but it was not that clear. The user will be confused and will try to find an alternative. And if your app will include detailed photos and videos, it will help a lot.</p>
+<p>Videos can also help monetize the app. If text description with photos is not enough - we could add a premium subscription, which would allow users to view videos, to make sure exercises are done with perfect form.</p>
+<p>Another, even better idea, is to use Augmented Reality. Imagine if the user would be able to see how to do an exercise through a camera: he would be able to view a 3D figure of an athlete, doing an exercise. How awesome would it be?</p>
+<p>Of course, you can add even more interesting touches to the application. If you will need a more precise estimation for custom features - <a href="https://mova.io/contacts/">just contact us</a>.</p>
+<p><img src="./How To Make a Fitness App - mova.io_files/strong2.jpg" alt="Fitness Application - Strong Workouts Library"></p>
+<h3>Workouts History and Progress</h3>
+<p>Another critical section that we need when we make a fitness app is a workouts history. It will help the user to see his previous workouts, compare results, and see the progress.</p>
+<p>Workouts History is just a list with all the previous workouts. By tapping on it, the app will show more info about the workout: time, date, results, photos, and more. Of course, workouts history will be saved on the server under user's account so that he can see all the same data on all the devices, all the platforms, and on each his new device in the future. To do it, after each workout its data will be sent to our API server, saved in the database, and will be accessible in the history in the future.</p>
+<p>A progress screen will show user stats on his progress. Weights that he lifts for bodybuilding, distances, and speed for running, learned asanas for yoga and more. Usually, progress screens have charts, graphs or lists with the most interesting data. All the stats are calculated on the server, and the application will only translate the raw data into its visual representation.</p>
+<p>Basic Workout History and Progress screens can take around a week of work, and prices start from $1,400.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+Curious about other popular applications? We have an excellent idea for you. Events and conferences are widely popular these days. In a previous blog post, we described what it takes to <a href="https://mova.io/blog/what-does-it-take-to-make-a-conference-app-for-your-event/">create an event app</a>, about core features, timeframes, costs, and more.
+</div>
+<h3>Current Workout</h3>
+<p><img src="./How To Make a Fitness App - mova.io_files/4.jpg" alt="Fitness Application - Types"></p>
+<p>This is a core of the application. You can't make a workout app without a Current Workout screen. It will help a user to track his current workout while training. If you are targeting runners - this screen will show a map, user's route, speed, and other stats. If you are targeting weightlifters - this screen can contain a list of all the exercises they plan to do, previous results, and today values. Other applications can also show current and next exercise, additional info on correct exercise technique, videos, and more. For some activities, current workout screen can also play soma audio instructions or notifications.</p>
+<p>Development of this screen will depend a lot on the number of selected features. Prices and timeframes start from 1 week and $1,400 for a usual list of next exercises and fields to track current results. If you plan to include map, route, audio instructions, speed calculations and more - this screen can take 2 or 3 weeks ($2,800 - $4,200).</p>
+<h3>Additional Features</h3>
+<p>We just covered all the essential features that need to be developed when you create a workout app. However, these days "basic" is never enough. To engage users, you might need to think about additional features.</p>
+<p>What about social features? User's friends could comment or "like" each other activities. Besides, it could help users to achieve their goals: just simple comments could help users share their experiences, tips, and feedback. If one person sees his friend stuck with the same results - he might help him with advice, for example.</p>
+<p>Or maybe leaderboard? We are making a sports app, and it would be interesting for users to see where their results are. How do they compare to people in their city? Or country? Or whole world? It's fun to know that your deadlifts are one of the best in the city, or that you run faster than anyone in a neighborhood.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+By the way, social features are something that we closely work on. We have released multiple social and dating applications, and even wrote about it earlier: How to <a href="https://mova.io/blog/how-to-create/">create a dating app </a>, and make it profitable.
+</div>
+<h3>Admin Panel</h3>
+<p>Few apps can exist without an admin panel. It helps track new users, answer support questions, keep workouts library up-to-date, manage transactions, deactivate users, and more.</p>
+<p>Admin panels can have hundreds of features. It is crucial to outline those that have to be included in the release version - it will help to make precise estimation and to make a development plan.</p>
+<p>On average, a most important feature of an admin panel are:</p>
+<ul>
+<li>List of users and their info</li>
+<li>List of workouts and their details</li>
+<li>List of transactions</li>
+<li>Stats about user engagement, user number growth, and more.</li>
+</ul>
+<p>On average, prices for admin panel start from $3,000 and depend a lot on a number of features that need to be included.</p>
+<div class="portoflio-desc">
+    <a href="http://mova.io/portfolio/zygo/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How To Make a Fitness App - mova.io_files/transparent(1).png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Portfolio: Zygo</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            One exciting example of a sports app that we worked on - Zygo. The application is made for water sports. A user can browse workouts from famous trainers, listen to audio instructions while working out, leave feedback, and more.
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="business-model">Business Model</a></h2>
+<p>Now when we know all the features that app will have, we need to make sure that its business model will be sustainable. We need to think about:</p>
+<ol>
+<li>
+<p>How much it costs to support the application after the release (maintenance costs, server costs, etc.). This question will have different answers for each project. It depends on the number of services used, number of users, database size, and more. If you need help - just write to us at <a href="mailto:mail@mova.io">mail@mova.io</a>, and we will help you to calculate maintenance costs.</p>
+</li>
+<li>
+<p>How to monetize the application, and make sure it covers maintenance costs and generates profit. To start thinking about it, we will need to know the price of maintenance. Also, we need to think about different monetization types. Should we add monthly subscriptions for premium features? Make a paid app? Add In-App purchases for premium features or premium workouts?</p>
+</li>
+<li>
+<p>How to make users <em>want</em> to pay for the app? Of course, we can choose any monetization type, but will users be happy to purchase it? Are those premium features are indeed worth it? Or maybe the user is fine using the free version of your application?</p>
+</li>
+</ol>
+<p>The best way is to think about the most exciting features in your app. Those that everyone would want to use. Maybe it is some enhanced workout programmes. Or interesting stats that will help a user to find his weakest spots. Our goal here is to see those features, give the user a taste of it, and when they are used to it - we can ask for a small fee in return.</p>
+<h2><a name="summary">Costs of Fitness App Development</a></h2>
+<p><img src="./How To Make a Fitness App - mova.io_files/5.jpg" alt="Fitness Application - Types"></p>
+<p>In this article, we tried to cover everything that one needs to know when they build a workout app for iOS or Android. Tech stack, number of developers needed, most important features, and more.</p>
+<p>Let's see the final table with estimations for a basic workout application for one platfrom (iOS or Android or web) below:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Hours</th>
+<th>Costs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registration and login</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Workouts Library</td>
+<td>80</td>
+<td>$2,800</td>
+</tr>
+<tr>
+<td>Workouts History and Progress</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Current Workout</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Admin Panel</td>
+<td>86</td>
+<td>$3,000</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>286 hours or 10 weeks</td>
+<td>$10,000</td>
+</tr>
+</tbody>
+</table>
+<p>If you are interested to make a fitness application - just <a href="https://mova.io/contacts/">let us know</a>. Our experienced iOS and Android developers worked on multiple sports applications and would be happy to help you with development too.</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+    <div>Have a question? Just write to us at:</div>
+    <span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+    <div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+  .some-style { color: #fafafa; }
+</style>
+      </section>
+
+      <section class="post-info" data-gtm-vis-recent-on-screen-10579059_27="73206" data-gtm-vis-first-on-screen-10579059_27="73206" data-gtm-vis-total-visible-time-10579059_27="500" data-gtm-vis-has-fired-10579059_27="1">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=How%20to%20Create%20a%20Fitness%20App&amp;url=https://mova.io/blog/how-to-create-a-fitness-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/how-to-create-a-fitness-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/how-to-create-a-fitness-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How To Make a Fitness App - mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/gps-navigation-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Creating a GPS Navigation App - 7 Things to Consider</h2>
+		              <p class="post-nav-excerpt">How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app1044" name="dsq-app1044" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How To Make a Fitness App - mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/how-to-create-a-fitness-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5c0e86ba4fdeca47e0aa6d84"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How To Make a Fitness App - mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How To Make a Fitness App - mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.014096405824116642" frameborder="0" width="100%" height="50px" scrolling="no" src="./How To Make a Fitness App - mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How To Make a Fitness App - mova.io_files/count.js.download" async=""></script>
+
+
+<iframe style="display: none;" src="./How To Make a Fitness App - mova.io_files/saved_resource(1).html"></iframe><script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

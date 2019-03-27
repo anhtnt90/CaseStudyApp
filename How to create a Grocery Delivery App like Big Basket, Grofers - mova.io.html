@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://mova.io/blog/grocery-delivery-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How to create a Grocery Delivery App like Big Basket, Grofers - mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script async="" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/gtm.js.download"></script><script async="" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="Properly created product delivery application can bring good benefits to the customer. In this article we will talk about our experience and the approach of creating a product delivery application for Android or iOS like Big Basket or Grofers.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/grocery-delivery-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/grocery-delivery-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to create a Grocery Delivery App like Big Basket, Grofers - mova.io">
+    <meta property="og:description" content="Properly created product delivery application can bring good benefits to the customer. In this article we will talk about our experience and the approach of creating a product delivery application for Android or iOS like Big Basket or Grofers.">
+    <meta property="og:url" content="https://mova.io/blog/grocery-delivery-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2019/03/c.jpg">
+    <meta property="article:published_time" content="2019-02-11T05:55:00.000Z">
+    <meta property="article:modified_time" content="2019-03-14T06:29:06.000Z">
+    <meta property="article:tag" content="ecommerce">
+    <meta property="article:tag" content="how-to">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to create a Grocery Delivery App like Big Basket, Grofers - mova.io">
+    <meta name="twitter:description" content="Properly created product delivery application can bring good benefits to the customer. In this article we will talk about our experience and the approach of creating a product delivery application for Android or iOS like Big Basket or Grofers.">
+    <meta name="twitter:url" content="https://mova.io/blog/grocery-delivery-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2019/03/c.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="ecommerce, how-to">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="1500">
+    <meta property="og:image:height" content="1000">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How to create a Grocery Delivery App like Big Basket, Grofers - mova.io",
+    "url": "https://mova.io/blog/grocery-delivery-app/",
+    "datePublished": "2019-02-11T05:55:00.000Z",
+    "dateModified": "2019-03-14T06:29:06.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2019/03/c.jpg",
+        "width": 1500,
+        "height": 1000
+    },
+    "keywords": "ecommerce, how-to",
+    "description": "Properly created product delivery application can bring good benefits to the customer. In this article we will talk about our experience and the approach of creating a product delivery application for Android or iOS like Big Basket or Grofers.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/embed.js.download" data-timestamp="1553656420283"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-ecommerce tag-how-to-3" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2019-02-11">11 Feb 2019</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2019/03/c.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-ecommerce tag-how-to-3">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to develop Grofers like app, you should learn a lot of information about it and adopt successful companies experience.</p>
+<p>Do you know what to look for to get the maximum benefit when you build a grocery ordering app? In this article, we have tried to give answers to the most common questions about the organization of work in the creation of such an Internet resource. You will get valuable recommendations about how to build app like Big Basket on virtual trading platform.</p>
+<p>The following information will be useful for start-up projects or restaurants wishing to develop their field of activity and to create on-demand grocery app.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;"> 
+Would like to create a Grocery Delivery app? We know how to make an Android app like Big Basket. If you are looking for Android or <a href="https://mova.io/services/ios/"> iOS development </a> teams will help you to  create a grocery ordering app according to your specifications and preferences.
+</div>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#market">Market niche and trends</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#how">How does it work?</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#features">Main Features</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#plan">Business Plan</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#sections">Application Sections</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#admin">Administrative Section</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#user">User Section</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#costs">Development costs</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#2019">What</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#one">One</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#android">Android</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#ios">Apple</a></li>
+<li><a href="https://mova.io/blog/grocery-delivery-app/#conclusion">Conclusion</a></li>
+</ol>
+<h2><a name="market">Market niche and trends</a></h2>
+<p>More and more areas of human life feel the impact of technological progress. The food industry is no exception. A lot of people use groceries delivery applications because it is an opportunity to save a few minutes in an already packed schedule. And every day the number of people using services is growing significantly. Right now is a really good time if you want to know how to make a grocery ordering app. Curious what it takes? We tried to explain it below.</p>
+<p>For owners of restaurants and cafes, a mobile application or food delivery service is not only a reason to find new customers and strengthen their loyalty, but also the ability to use the functions of mobile devices for the convenience of the client and the development of their business.</p>
+<p>Now restaurants and shops that create a grocery delivery apps for their business note that these innovations have a positive effect on their sales size. The web analytics state that the number of people who orders food through Uber Eats or similar is growing rapidly. Grocery delivery apps are not an exception - ordering online, especially from mobile takes way less time, and is more convenient for a user. No need to go anywhere, stand in a line, and move huge bags back home after. For example, we can see an increase in orders of fruit and vegetables. An ordering of groceries from mobile is gradually transformed from a festive event into everyday consumption. You need to develop a grocery delivery app to provide you a lot of customers and therefore profitability of your store.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+Ever wanted to <a href="https://mova.io/blog/how-to-make-a-social-media-app/">create a social media app</a> for your business? Or would like to integrate some social features to your delivery app, like reviews, comments or likes? We can help you with that - just write to us at mail@mova.io!
+</div>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/8.jpg" alt="How groceries delivery app works?"></p>
+<h2><a name="how">How does it work?</a></h2>
+<p>Everything happens online. The operator can call a user only if there are any problems with the order, for example, if there are not enough products for an order. In that case, operator and user can resolve a problem together by changing products to an alternative, or the user could update an order on his phone. The main advantage of e-commerce is the speed of making an order, which is much higher than going shopping by yourself. And, of course, the amount of saved time.</p>
+<p>Order status can be seen in the app as well. You continuously receive notifications with information about the status of the order: when it is ready, when it is in front of the courier, when it is on the way, and where it is on the map. At the estimated time of delivery, the client receives a message asking if groceries were brought on time or if there were any complaints.</p>
+<p>Of course, it is always possible to contact the operator from the support service, find out what the problem was and solve the issue.</p>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/3-1.jpg" alt="build a grocery ordering app"></p>
+<h2><a name="features">Main Features</a></h2>
+<p>The grocery delivery applications installed on the mobile device significantly increase the loyalty of users, because it is more convenient to place an order from the service that opens by clicking on the icon than to search the Internet for something new and unfamiliar.</p>
+<p>Besides, to make an order, the user usually needs to create an account. It is an excellent opportunity to make customer continue shopping in your store! By tracking the number of orders, or their total amounts, you can always reward customers with new discounts, loyalty programs, and so on.</p>
+<p>The application can also help you to learn more about users. Which products are most often purchased, and when? Which users are using the app less than usual? Maybe it is a good idea to send a special offer to them, to make them come back?</p>
+<p>When developing applications, it is important to introduce some features to make an app like Grofers that would be different from others. But at the same time, some important details that cannot be so easily missed can unfortunately be overlooked. Our team approaches the development with special responsibility, so none of the important aspects will not be missed. Below you can find out about some of them.</p>
+<p>First of all, if we are talking about the grocery delivery application, then it is worth thinking about a great user interface design, with high-quality photos, and extensive product descriptions. A good application contains large and colorful photos, thus encouraging the customer to place an order.</p>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/5-1.jpg" alt="online grocery store"></p>
+<p>Easy navigation saves a lot of action. The basic rule is: faster the buyers gets food, the faster the service earns money. Incomprehensible navigation infuriates the user, and he leaves the application. The longer he places an order, the greater the likelihood that he will change his mind. User can get distracted, something can go wrong and he will not order anything.</p>
+<p>Also, keep track of new devices and new versions of the OS. Optimization is very important, because customer convenience is paramount.</p>
+<p>The main advantages of an application like Big Basket are the following three things:</p>
+<p>Firstly, the Service guarantees the delivery of food on the day of order.</p>
+<p>Delivery time coincides with the actual time in almost 100% of cases.</p>
+<p>And in the end, the speed of customer inquiries and the exchange of each request is organized in order to ensure the reliability of customers.</p>
+<p>Big Basket is a service that is constantly evolving, providing its customers with a wide range of products.</p>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/7.jpg" alt="Delivery application - market research"></p>
+<h2><a name="plan">Business Plan</a></h2>
+<p>Most of the grocery delivery services keep their warehouses and delivery vans outside of the city. They also have smaller locations inside the city, close to the customer. Their primary duty is to take orders from customers and transfer products to drivers. Such a scheme demonstrates more successful work, unlike its predecessors.</p>
+<p>Also, multichannel services use the shops located nearby as smaller distribution centers. Dedicated staff, called “collectors,” gathers orders for delivery, and hands them to drivers and delivery personnel. It allows delivering the order to customers faster, and their inventory is more optimized on demand.</p>
+<p>Additional features that can help you stand out, attract more users, and be more profitable:</p>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/9.jpg" alt="9"></p>
+<p><strong>1. Delivery on the day of ordering.</strong></p>
+<p>The main task, in this case, is to simplify the delivery methods. Large vans are unlikely to achieve this goal. We assume the use of something faster and more compact.</p>
+<p><strong>2. Loyalty programmes</strong></p>
+<p>Attracting new customers are extremely important item. However, we also need to find ways for existing customers to come back. If your delivery service has its own mobile application - this will make the problem easier. You already have contact with a user; you know his purchasing behavior, and how often he buys each particular product. You can create a loyalty program, add a bonuses system, notify users about new products in stock that could be interesting to them, and much more!</p>
+<p><strong>3. Organization of the workflow</strong></p>
+<p>The work of the staff, in this case, plays a key role. To successfully create Grofers like app it is necessary to make a comfortable rhythm at which store assemblers will efficiently process online requests and transfer orders to drivers. This will ensure all orders will be prepared and shipped in time, which will result in high users' satisfaction.</p>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/2-1.jpg" alt="Delivery application sections"></p>
+<h2><a name="sections">Application Sections</a></h2>
+<p>In most cases, applications like Grofers include the following items:</p>
+<ul>
+<li>Administrative section for managers and administrators.</li>
+<li>Section for the partner stores.</li>
+<li>Delivery application for couriers.</li>
+<li>User applications for iOS and Android phones.</li>
+</ul>
+<p>Prior to the development, it is necessary to correctly calculate the future budget and assess your capabilities. You might need to collect the following data:</p>
+<ul>
+<li>The cost of the project.</li>
+<li>The dynamics of profit, based on the average cost of the order, the frequency and value of the average check.</li>
+<li>Financial forecasts of marketing agencies.</li>
+</ul>
+<p>To perform different types of work - creating a website, a mobile application, development of design and advertising materials, you must select several contractors. At the initial stage of the business a lot of factors are crucial. One of them is human factor, because the success of the business depends on the degree of employee interest.</p>
+<p>Delivery Application like this will need help of next engineers:</p>
+<ul>
+<li>Back-end developer</li>
+<li>Web front-end developer</li>
+<li><a href="https://mova.io/services/android/">Android development</a> team</li>
+<li>iOS development team</li>
+<li>QA Engineers</li>
+<li>Designer</li>
+<li>Project Manager</li>
+</ul>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/4-1.jpg" alt="how to create Grofers like app"></p>
+<p>In the first few months after the release of the project, marketing and advertising should be done very carefully. It might be even better to take this period as a "beta test" to identify issues that users have, and improve the overall workflow of the app.</p>
+<p>This approach optimizes costs and avoids problems associated with customer dissatisfaction.</p>
+<h2><a name="admin">Admin Dashboard</a></h2>
+<p>Admin Dashboard is used to manage the whole application. It allows content managers to create a beautiful menu that will be shown on user devices. It allows admins and managers to view list of users, their purchasing history, create new discounts and loyalty programmes, and more.</p>
+<p>Admin panel also connects customer support engineers with users who experience some difficulties. All notifications, assistance including communication with users are performed through the admin panel.</p>
+<p>The following groups of users with different rights are usually distinguished:</p>
+<ul>
+<li>Administrator. Full access to all features.</li>
+<li>Manager. Access to financial statistics, all orders, reviews and ratings from users, working reports.</li>
+<li>Content manager. Access to the pages of the website (add, edit, delete records and pages), access to the information section of the application (add news and mass alerts).</li>
+<li>Customer Support. Work with current orders in a specific region, access to user messages, the ability to approve or edit an order manually, communicate (text and voice) with couriers and customers, work reporting.</li>
+</ul>
+<div class="portoflio-desc">
+    <a href="https://mova.io/portfolio/menupoint/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/transparent.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Portfolio: MenuPoint</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            One of the most complex but interesting admin dashboards is in the MenuPoint project. It allows admins to configure absolutely everything about the application. From restaurants to their menus, from registration options to payment options, and much more. If you would like to develop a project with an admin panel that would allow you to configure anything in your project - just write to us at mail@mova.io
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="user">User Section</a></h2>
+<p>Overall, an average grocery delivery application should allow user to do next:</p>
+<ul>
+<li>Enter the address in the search box;</li>
+<li>Wait for the application to generate a list of the nearest shops;</li>
+<li>Using the filter or search, a user should be able to find products he would like to purchase;</li>
+<li>Start making an order, adding each new product to the basket;</li>
+<li>When ready, a user should be able to check out, and pay for the order with convenient payment method;</li>
+<li>Check the status of the order. If possible - even the location of the delivery person on a map;</li>
+<li>View a history of previous orders with all the details.</li>
+</ul>
+<p>To improve user's experience, it might be a good idea to add features that will help user to make orders faster, save time and money. For example:</p>
+<ul>
+<li>Convenient menu</li>
+<li>Promotions and in-app bonuses</li>
+<li>Loyalty program</li>
+<li>Payment by credit card, or any other method popular in a selected region</li>
+<li>Purchase history</li>
+</ul>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+    Contact us now to begin making your app idea come true! Whether you would like to make a delivery app, <a href="https://mova.io/blog/how-to-build-music-app/">create music streaming app</a>, or any other type of a project - our team of experienced developers, designers and testers is always ready to help!
+</div>
+<p><img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/6-1.jpg" alt="Groceries delivery app costs"></p>
+<h2><a name="costs">Development costs</a></h2>
+<p>Price and timeframes for a grocery delivery application depend a lot on required functions and functionality.</p>
+<p>A simple delivery application with admin panel, application for couriers, and user application for iOS and Android can start from $15,000. It will have all the core features and will allow users to make orders and pay for them. Admins and managers will be able to create a menu with detailed descriptions and pricing, vivid photos and more.</p>
+<p>A more complex application that will have a sophisticated menu editor, multiple admin roles with different permissions, loyalty programmes and other features can cost $25,000 and more.</p>
+<p>We are always happy to provide you with an estimation for your project. To do this, we will need to have a description of what needs to be done. In return, we will provide a detailed estimations sheet, which will show how much each particular feature can cost, and how much time development can take.</p>
+<h2><a name="">Conclusion</a></h2>
+<p>We guarantee that with the help of our specialists we can build a grocery delivery application as perfect as possible, that will keep your customers happy, and will allow you to control and customize the project behaviour.</p>
+<p>Thanks to the mobile or online grocery store, your client will be able to view the order status at any time, track the courier's location, directly contact the operator without leaving the application, and receive a long-awaited order at any convenient place. In the application, you can also give the client the right to choose payment methods, decide how to choose a specific group of dishes, and also enjoy your favorite dishes at no extra charge.</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+<div>Have a question? Just write to us at:</div>
+<span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+<div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+.some-style { color: #fafafa; }
+</style>
+
+      </section>
+
+      <section class="post-info">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=How%20to%20Develop%20a%20Grocery%20Delivery%20App%20like%20Big%20Basket,%20Grofers&amp;url=https://mova.io/blog/grocery-delivery-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/grocery-delivery-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/grocery-delivery-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/ecommerce/">ecommerce</a> <a href="https://mova.io/blog/tag/how-to-3/">how-to</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/gps-navigation-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Creating a GPS Navigation App - 7 Things to Consider</h2>
+		              <p class="post-nav-excerpt">How often do you use GPS-navigators on your smartphone? If it is rare, then it is time to correct the situation, because they are indispensable assistants to travelers. Google Maps…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/ecommerce-mobile-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/02/black-friday-buy-computer-34577.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Why your E-commerce​ Store Needs a Mobile Application</h2>
+		              <p class="post-nav-excerpt">According to Google 2017-2018, 68% of smartphone owners use their devices for mobile shopping app, and 66% of them make purchasing decisions with a smartphone at least once a week.…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-ecommerce tag-how-to-3">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app3878" name="dsq-app3878" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/grocery-delivery-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5c7cb279283a160546bc94e9"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-ecommerce tag-how-to-3"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.02692288645629537" frameborder="0" width="100%" height="50px" scrolling="no" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/count.js.download" async=""></script>
+
+
+<script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><iframe style="display: none;" src="./How to create a Grocery Delivery App like Big Basket, Grofers - mova.io_files/saved_resource(1).html"></iframe><div id="eJOY__extension_root" style="all: unset;"></div></body></html>

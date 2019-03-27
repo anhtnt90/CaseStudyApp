@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://mova.io/blog/how-to-build-a-travel-app/ -->
+<html lang="en" class="cover-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io</title>
+
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/app.css">
+  <link rel="stylesheet" type="text/css" href="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/simple-grid.min.css">
+  <link rel="stylesheet" href="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/font-awesome.min.css">
+
+
+
+  <meta name="author" content="mova.io">
+  <meta name="language" content="english">
+
+  <meta name="google-site-verification" content="cDGk0JfkbfkLlhXFbN9DtxLIqPlbp0YLHhikt4c7XTo">
+
+  <!-- Google Plus -->
+  <link rel="publisher" href="https://plus.google.com/106884663363840675477">
+  <meta itemprop="name" content="Mova">
+  <meta itemprop="url" content="http://mova.io">
+  <meta itemprop="address" content="Kyiv, Ukraine">
+  <meta itemprop="description" content="Mobile Applications Development Studio">
+
+
+  <!-- Clutch Code -->
+  <script async="" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/gtm.js.download"></script><script async="" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/analytics.js.download"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/widget.js.download"></script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '430281634087090');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=430281634087090&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <!-- FB SDK -->
+  <script>
+     window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '210842179513959',
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Linkedin -->
+  <script type="text/javascript">
+  _linkedin_data_partner_id = "225651";
+  </script><script type="text/javascript">
+  (function(){var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript";b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})();
+  </script>
+  <noscript>
+  <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=225651&fmt=gif" />
+  </noscript>
+
+  <script>
+    // Google Analytics Code
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39244563-4', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NL25XRR');</script>
+  <!-- End Google Tag Manager -->
+
+	<meta name="description" content="Thinking to make your own iOS or Android travel app? mova.io developers will help you to understand how to build a travel app.">
+    <link rel="shortcut icon" href="https://mova.io/blog/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://mova.io/blog/how-to-build-a-travel-app/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="https://mova.io/blog/how-to-build-a-travel-app/amp/">
+    
+    <meta property="og:site_name" content="mova.io">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io">
+    <meta property="og:description" content="Thinking to make your own iOS or Android travel app? mova.io developers will help you to understand how to build a travel app.">
+    <meta property="og:url" content="https://mova.io/blog/how-to-build-a-travel-app/">
+    <meta property="og:image" content="https://mova.io/blog/content/images/2018/11/4.jpg">
+    <meta property="article:published_time" content="2018-11-14T11:34:58.000Z">
+    <meta property="article:modified_time" content="2018-12-17T11:32:04.000Z">
+    <meta property="article:tag" content="mobile">
+    <meta property="article:tag" content="app">
+    <meta property="article:tag" content="how-to">
+    <meta property="article:tag" content="estimation">
+    <meta property="article:tag" content="travel">
+    <meta property="article:tag" content="booking">
+    
+    <meta property="article:publisher" content="https://www.facebook.com/movaio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io">
+    <meta name="twitter:description" content="Thinking to make your own iOS or Android travel app? mova.io developers will help you to understand how to build a travel app.">
+    <meta name="twitter:url" content="https://mova.io/blog/how-to-build-a-travel-app/">
+    <meta name="twitter:image" content="https://mova.io/blog/content/images/2018/11/4.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Kyrylo Savytskyi">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="mobile, app, how-to, estimation, travel, booking">
+    <meta name="twitter:site" content="@mova_io">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="1334">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "mova.io",
+        "logo": "https://mova.io/blog/favicon.ico"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Kyrylo Savytskyi",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/37fe84c5bf6af53063d7794b5625cb3e?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "https://mova.io/blog/author/kyrylo/",
+        "sameAs": []
+    },
+    "headline": "How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io",
+    "url": "https://mova.io/blog/how-to-build-a-travel-app/",
+    "datePublished": "2018-11-14T11:34:58.000Z",
+    "dateModified": "2018-12-17T11:32:04.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://mova.io/blog/content/images/2018/11/4.jpg",
+        "width": 2000,
+        "height": 1334
+    },
+    "keywords": "mobile, app, how-to, estimation, travel, booking",
+    "description": "Thinking to make your own iOS or Android travel app? mova.io developers will help you to understand how to build a travel app.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mova.io/blog/"
+    }
+}
+    </script>
+
+    <script src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/ghost-sdk.min.js.download"></script>
+<script>
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a2c6a2eff994"
+});
+</script>
+    <meta name="generator" content="Ghost 2.6">
+    <link rel="alternate" type="application/rss+xml" title="mova.io" href="https://mova.io/blog/rss/">
+<script src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/embed.js.download" data-timestamp="1553652755610"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10);
+    border: 1px solid #c8c7cc;
+    border-radius: 11px;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px;
+}
+
+.iw-cm-menu {
+    background: #fff;
+    color: #000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    list-style: none;
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #c8c7cc;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    margin: 0;
+    line-height: inherit;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    border-bottom: none;
+}
+
+.iw-mOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #FFF;
+    opacity: .5;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6;
+}
+
+.iw-cm-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #000;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.9974049bf7b0591e5d4f055cb67f3ee3.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.880980e048a2432334f13013030456ac.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.4180262f1aa52e0f0340aac9fc52a8d8.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/alfalfa_min.d078e4f2a4721192a99e02601a767617.js.download" async="" charset="UTF-8"></script></head>
+
+<body class="post-template tag-mobile tag-app-tag tag-how-to-2 tag-estimation tag-travel tag-booking" cz-shortcut-listen="true">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL25XRR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+	<div style="width: 100%; height: 2px; background-color: #c4c4c4"></div>
+	<div style="width: 100%; padding: 10pt;">
+	  <div style="height:100%; max-width: none;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-2 logo-container">
+	        <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a>
+	      </div>
+	      <div class="col-10 right">
+	        <nav class="nav-container">
+	          <a href="https://mova.io/" style="margin-right: 20px;">home</a>
+	          <a href="https://mova.io/services" style="margin-right: 20px;">services</a>
+	          <a href="https://mova.io/portfolio" style="margin-right: 20px;">portfolio</a>
+	          <a href="https://mova.io/contacts" style="margin-right: 20px;">contacts</a>
+	          <a href="https://mova.io/estimations" style="margin-right: 20px;">prices</a>
+	          <a href="https://mova.io/side-projects" style="margin-right: 20px;">side projects</a>
+	          <a href="https://mova.io/process" style="margin-right: 20px;">how to start?</a>
+	          <a href="https://mova.io/blog" style="margin-right: 20px;">blog</a>
+	        </nav>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<nav id="menu">
+	<a class="close-button">Close</a>
+	<div class="nav-wrapper">
+		<p class="nav-label">Menu</p>
+		<ul>
+			<li class="nav-home" role="presentation"><a href="https://mova.io/">Home</a></li>
+			<li class="nav-contacts" role="presentation"><a href="https://mova.io/contacts">Contacts</a></li>
+			<li class="nav-blog" role="presentation"><a href="https://mova.io/blog/">Blog</a></li>
+			<li class="nav-our-services" role="presentation"><a href="https://mova.io/services">Our Services</a></li>
+			<li class="nav-portfolio" role="presentation"><a href="https://mova.io/portfolio">Portfolio</a></li>
+			<li class="nav-prices" role="presentation"><a href="https://mova.io/estimations">Prices</a></li>
+			<li class="nav-twitter"><a href="https://twitter.com/mova_io" title="@mova_io"><i class="ic ic-twitter"></i> Twitter</a></li>
+			<li class="nav-facebook"><a href="https://www.facebook.com/movaio/" title="movaio/"><i class="ic ic-facebook"></i> Facebook</a></li>
+			<li class="nav-rss"><a href="https://mova.io/blog/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+		</ul>
+	</div>
+</nav>
+
+
+	<section id="wrapper">
+		<a class="hidden-close"></a>
+		
+
+
+
+<div class="progress-container">
+  <span class="progress-bar" style="width: 0%;"></span>
+</div>
+
+<header id="post-header" class="has-cover">
+  <div class="inner">
+    <nav id="navigation">
+      <span id="home-button" class="nav-button">
+        <a class="home-button" href="https://mova.io/blog" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+      </span>
+      <span id="menu-button" class="nav-button">
+        <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+      </span>
+    </nav>
+    <h1 class="entry-title post-title">How to Build a ​Successful Travel App</h1>
+    <span class="post-meta"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a> | <time datetime="2018-11-14">14 Nov 2018</time></span>
+    <div class="post-cover cover" style="background-image: url(&quot;/blog/content/images/2018/11/4.jpg&quot;); transform: translate3d(0px, 0px, 0px);"></div>
+  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post tag-mobile tag-app-tag tag-how-to-2 tag-estimation tag-travel tag-booking">
+    <div class="entry-content inner">
+
+      <section class="post-content">
+        <p>The travel industry is growing rapidly: more and more people are traveling, from a casual tourist to a digital nomad. More and more interesting apps are created every day: some help you to book hotels, others compare airplane tickets for you, and others help you pack your stuff.</p>
+<p>In this article, we will try to figure out how to make a travel app for <a href="http://mova.io/services/ios/">iOS</a> or <a href="http://mova.io/services/android/">Android</a>, what we will need to develop it from scratch, how much time and costs it might need.</p>
+<div class="table-of-contents-header">Table of contents</div>
+<ol>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#travel-app-types">Travel app types</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#how-to-build">How to Build Successful Travel App</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#login">Login and Registration</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#search">Search and Filter</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#listing-info">Listing Info</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#messaging">Messaging</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#payment-details">Payment details or Earnings</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#booking-history">Booking History</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#reviews">Reviews</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#host-app">Host: Create and Update a Listing</a></li>
+<li><a href="https://mova.io/blog/how-to-build-a-travel-app/#summary">Summary</a></li>
+</ol>
+<hr>
+<h2><a name="travel-app-types">Travel app types</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/1.jpg" alt="Travel App - Types"></p>
+<p>Let's see what types of travel apps are out there:</p>
+<p><strong>Hotel/Apartment Booking apps</strong> - they help users to find a place to stay. There are traditional booking apps that allow you to book hotels, and Airbnb-like apps, where hosts can publish their apartment for rent. Both app types will need three sides: one for a user to book a place, one for a hotel manager (or apartments owner) to control their listing, and an admin panel for project owners to see all the listings, users, reviews, and more;</p>
+<p><strong>Airplane tickets booking apps:</strong> this type of apps helps a user to find cheapest airplane tickets. The idea is simple: we allow the user to select destination, dates, and app will check different airlines to find cheapest and quickest options. The main problem here is to find all the APIs needed to get all the info about flights, prices, dates, discounts, and more.</p>
+<p><strong>Navigation apps</strong><br>
+Navigation apps help users to find the quickest way to get from A to B or to find interesting places around them. It is vital for navigation apps to work offline since tourists might not have a stable connection in another country. However, if your goal is to show interesting places around - this will be less important, but still nice to have. We will review how to make a travel guide app soon.</p>
+<p><strong>Taxi Services</strong><br>
+Whenever a person arrives in a new city, he will definitely need to get to his hotel or apartment somehow. The easiest way is to book a taxi. However, sometimes it can be an adventure: not every driver will tell you a real price, not every driver will speak your language, and so on. Uber, Lyft, and other services came to the rescue. They will show you the correct price, trip duration, driver reviews, and much more.</p>
+<p><strong>Other Apps</strong><br>
+Of course, there are much more to travel apps. Planners, guides, translator and weather apps. We will review them in the next articles.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     The mova.io is an <a href="https://mova.io/services/android/">Android mobile app development company</a>. We help startups and businesses to build high-quality mobile applications. Contact us: mail@mova.io
+</div>
+<h2><a name="how-to-build">Main sections of Travel App</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/2.jpg" alt="Travel App - Start"></p>
+<p>Curious how to start a travel app? Hotel and apartment booking market is growing rapidly, so it can be a great idea to learn more about it. For the sake of example, let's talk about Airbnb-like travel application. What would it take to create an app, that would help the user to book an apartment, or to share his own?</p>
+<p>Let's start breaking down the app by sections to understand how to build a travel app. Then we will review each section, one by one. Average booking app will need two parts:</p>
+<p><strong>User app</strong></p>
+<ul>
+<li>Login and Registration</li>
+<li>Search and Filter</li>
+<li>Listing Info</li>
+<li>Messaging</li>
+<li>Payment details</li>
+<li>Booking History</li>
+<li>Reviews</li>
+</ul>
+<p><strong>Host app</strong></p>
+<ul>
+<li>Login and Registration</li>
+<li>Creating and Updating host's Listings</li>
+<li>List of host's Listings</li>
+<li>Reviews</li>
+<li>Earnings</li>
+</ul>
+<p>In case you would like <a href="http://mova.io/services/">to make your own travel app</a>, whether for <a href="http://mova.io/services/ios/">iOS</a>, <a href="http://mova.io/services/android/">Android</a>, or <a href="http://mova.io/services/">other platfrom</a> - just let us know at <a href="mailto:mail@mova.io">mail@mova.io</a></p>
+<div class="portoflio-desc">
+    <a href="https://mova.io/portfolio/packpoint/" style="color: black">
+    <div class="portfolio-image app-gradient">
+            <img class="portfolio-image-obj" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/transparent.png">
+    </div>
+    <div class="portfolio-text">
+        <div class="portfolio-app-name">Portfolio: PackPoint</div>
+        <hr style="margin: 0.4em;">
+        <div class="portfolio-app-desc">
+            Don't just take our word for it! We've completed some hugely successful applications in the Travel industry. For example, super smart packing list which was featured in App Store, Lifehacker, LA Times, 9to5mac, and more. If you want to start a business in the Travel industry and need an app, write to mail@mova.io
+        </div>
+        <br>
+        <div style="font-weight: 900;">👉 read more...</div>
+    </div>
+    </a>
+</div>
+<h2><a name="login">Login and Registration</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/3.jpg" alt="Travel App - Authentication"></p>
+<p>Usually, this is a mandatory application section. In our case, we could still allow users to browse listings unauthorized - it would increase engagement a lot. And if a user would like to make a booking or message a host - he would have to sign up.</p>
+<p>If you would like to simplify the user's life, you could also add social network integrations so that they could reuse their existing logins.</p>
+<p>Booking applications usually need more info to keep users and hosts safe. So we will need to gather some additional info, like a user's personal info, some verifications, and others.</p>
+<p>As for hosts - they would not have an option to use the app without registration. For safety concerns, their registration will have more steps - they will need to provide documents, read hosting rules, and more.</p>
+<p><strong>Registration:</strong> 40h, $1,400 ($35/h)<br>
+<strong>Social Networks integration:</strong> 10h or $350 per each platfrom ($35/h)</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     Travels aren't that good without some music. If you ever thought about making a music streaming app, just let us know. We've also made an article that helps to understand <a href="https://mova.io/blog/how-to-build-a-travel-app/how%20to%20create%20a%20music%20app/">how to create a music app</a>.
+</div>
+<h2><a name="search">Search and Filter</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/4.jpg" alt="Travel App - Search"></p>
+<p>One of the most essential functions of the app - to help the user find a place to stay according to his preferences, budget, dates, and so on. The more options we will give users, the better results he will get. O the other hand, if there will be too many options - it can become frustrating for the user, and he might get lost.</p>
+<p>The app should be able to show listings by given parameters:</p>
+<ul>
+<li>Location</li>
+<li>Price</li>
+<li>Dates</li>
+<li>Number of people</li>
+<li>Additional filters, like the Internet, Parking, Kitchen, and so on.</li>
+</ul>
+<p>Besides, it would be beneficial to show listings on a map, so a user can visually see how far from the city center (or from a subway station, or some other places) is the listing. Besides, we could use geolocation services, to show all the distances from user to a listing, and from listing to all the interesting places around.</p>
+<p>Whether we are developing an iOS app or Android app, we can choose different maps, from Apple Maps to Google Maps, or their alternatives.</p>
+<p><strong>Advanced search and filter screens:</strong> ~70h or $2,450 ($35/h)</p>
+<h2><a name="listing-info">Listing Info</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/5.jpg" alt="Travel App - Listing Info"></p>
+<p>You can't create travel app without listing info. When user found something interesting user our sophisticated search, he will want to check more info about the place:</p>
+<ul>
+<li>Apartment photos</li>
+<li>Description</li>
+<li>Availability Calendar</li>
+<li>Apartment Rules and Cancelation policies</li>
+<li>Host's Contact details</li>
+</ul>
+<p>The more info user will see - the better. If he will see listing info and won't find an answer to his question - he is most likely to leave. However, we can also add an option to message an owner so that he can answer all the questions.</p>
+<p>Average <strong>Listing Info screen</strong> with all the info needed can take around 60 hours to develop and will cost about $2,100 with a $35 hourly rate.</p>
+<h2><a name="messaging">Messaging</a></h2>
+<p>We can't leave an apartment booking app without a chat. Whenever a user has questions, the only message to an owner can resolve the issue. How far is a bus station from the apartment? How to get to the place from an airport? Can user take a pet with him? Also, when booking long-term, a chat will help resolve lots of other issues between hosts and clients.</p>
+<p>In most cases, it is okay to have the simplest chat possible. Users won't need any audio-calls or video-calls in most cases. It can take around 60 hours to add a <strong>text messaging feature</strong> to the app (or $2,200 with $35/h).</p>
+<h2><a name="payment-details">Payment details or Earnings</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/6.jpg" alt="Travel App - Payments"></p>
+<p>Whenever user found a place where he would like to stay, he will need to book it and pay for it. To do it, we will need to use payment gateways like Stripe or Braintree - they will simplify payments integration, and will make sure we won't have issues with transactions.</p>
+<p>Ideally, we will need to add Payment Info page, where a user will be able to add his credit card or bank information. Besides, we will need to add a payment confirmation and invoices screens, to show how much the user will need to pay, and a proof that the transaction went through.</p>
+<p>As for a Host, we will need to use that same Payment Info screen, but we will also need an Earning screen, where the Host will be able to see how much did he earn this month.</p>
+<p>Payments logic is simple: when a user found an apartment, we will charge him for his stay, and project's commision as well (in case you and your business would like to have some profit from it). At the end of each month, we will transfer the money to the place owner. The payment gateway will have its commission as well, so it is essential to calculate everything well so that nobody will lose money.</p>
+<p>Making a <strong>bulletproof payment system</strong> can take around 40 hours, and would cost $1,400 ($35/h)</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     One of our other areas of expertise is dating applications. If you would like to build one, send us a message at mail@mova.io or read our article about it: <a href="https://mova.io/blog/how-to-create/">make your own Tinder app</a>.
+</div>
+<h2><a name="booking-history">Booking History</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/7.jpg" alt="Travel App - Bookings"></p>
+<p>The app will not be completed without booking history. It will help a user to find those nice apartments where he stayed last summer. It will also help to resolve issues if some will arise: whether payment went through, for example. And it is just a nice section to view, to see where have you been over the last couple of years.</p>
+<p>Usually booking history has a list of all previous bookings, and actual booking details: hotel or apartment info, its address, photos, payment details, user's review, and more.</p>
+<p>Since we will only show existing data, this section is easy to develop. We will only need to request all the previous bookings from the server, and show them in a list. As for details - we will have to show everything that we have related to a selected reservation in one screen.</p>
+<p>Average development time for <strong>booking history</strong> and details: 30h, or $1,050.</p>
+<h2><a name="reviews">Reviews</a></h2>
+<p>One of the main parts of the application is a reviews system. It will help users to find the best places to stay, will make the service safer, and will improve the quality of available apartments.</p>
+<p>When the user checked out of the apartment (and if the payment went through), we will show him a simple screen where we will ask him to rate his experience. It will help new users to understand if the place is safe, if it looks like on the photo, if there are any hidden issues, and more.</p>
+<p>Even though user interface changes will be simple, back-end logic will be slightly more difficult. We will need to make sure that user has to leave a review. For example, if a client did book an apartment but never paid - he should never be able to leave a review because we don't have a proof of staying at the selected apartment. We also have to remind users to leave a review after checkout and show it at the Place Details screen.</p>
+<p>On average, <strong>review system</strong> can take around 30h to develop and can cost about $1,120.</p>
+<h2><a name="host-app">Host: Create and Update a Listing</a></h2>
+<p><img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/9.jpg" alt="Travel App - New Listing"></p>
+<p>Whenever new host signs up, he will need to be able to add his place to our database. This is a long and serious process, where we will ask the user about:</p>
+<ul>
+<li>place address;</li>
+<li>photos;</li>
+<li>Detailed description;</li>
+<li>additional services;</li>
+<li>Prices;</li>
+<li>availability Calendar;</li>
+</ul>
+<p>And much more. On the admin side, we will also need a mechanism to approve new listings or ask hosts to add some changes to make it available first.</p>
+<p>Making something similar to Airbnb's system will take at least 140 hours, and will cost around $5,000. However, it can always be simplified.</p>
+<div class="another-article-container" style="border-color: #aaf0ad;">
+     We are an <a href="https://mova.io/services/ios/">iOS mobile app development company</a>. Our main goal is to provide full-cycle development services to help you build a successful business from your idea. Say "Hi!" to us at mail@mova.io
+</div>
+<h2><a name="summary">Summary</a></h2>
+<p>Making a travel application that helps people booking apartments, and allows hosts to create apartments is a complex process. Basically, we will need to make an app that will work for three types of users:</p>
+<ul>
+<li>A user, who will search and book apartments</li>
+<li>Host, who will list his places in our database</li>
+<li>Admin, who can view all the users, hosts, places, transactions, and more.</li>
+</ul>
+<p>As with any project, it is a good idea to start only with a minimum viable product. It will help to release faster, only with core features, will save money, and will help to generate very first feedback earlier.</p>
+<p>Let's see how much time can it take to make an Airbnb-like application for one platfrom (iOS or Android), and what would it cost:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Hours</th>
+<th>Costs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Login and Registration</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Search and Filter</td>
+<td>70</td>
+<td>$2,450</td>
+</tr>
+<tr>
+<td>Listing Info</td>
+<td>60</td>
+<td>$2,100</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td>60</td>
+<td>$2,200</td>
+</tr>
+<tr>
+<td>Payments and Earnings</td>
+<td>40</td>
+<td>$1,400</td>
+</tr>
+<tr>
+<td>Booking History</td>
+<td>30</td>
+<td>$1,050</td>
+</tr>
+<tr>
+<td>Reviews</td>
+<td>30</td>
+<td>$1,120</td>
+</tr>
+<tr>
+<td>Creating and Updating host's Listings</td>
+<td>140</td>
+<td>$5,000</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>570 or 4 months</td>
+<td>$16,720</td>
+</tr>
+</tbody>
+</table>
+<p>This is an estimation for all the main features of an Airbnb-like application. Depending on designs and number of screens, the price can be reduced or increased. You can also view a complete interactive estimation for Airbnb-like application, where you can select only features that you will need, and then view the timeframes and costs in real-time: <a href="https://mova.io/estimations/airbnb">Airbnb Interactive Estimations</a></p>
+<p>Whether you would like to make a similar application, its lighter version, or any other mobile or web project - mova.io team is ready to help you out. Just write to us at <a href="mailto:mail@mova.io">mail@mova.io</a>, and we will be ready to help.</p>
+<hr>
+<div style="width: 100%; text-align: center;">
+    <div>Have a question? Just write to us at:</div>
+    <span style="color: black; font-size: 1.5em; text-decoration: none;">📮 mail@mova.io</span>
+    <div>Or <a href="https://mova.io/contacts/">leave your contact info</a>, and we will write back!</div>
+</div>
+<style scoped="">
+  .some-style { color: #fafafa; }
+</style>
+      </section>
+
+      <section class="post-info">
+
+        <div class="post-share">
+          <a class="twitter" href="https://twitter.com/share?text=How%20to%20Build%20a%20%E2%80%8BSuccessful%20Travel%20App&amp;url=https://mova.io/blog/how-to-build-a-travel-app/" onclick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=235&#39;);return false;">
+            <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+          </a>
+          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://mova.io/blog/how-to-build-a-travel-app/" onclick="window.open(this.href, &#39;facebook-share&#39;,&#39;width=580,height=296&#39;);return false;">
+            <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+          </a>
+          <a class="googleplus" href="https://plus.google.com/share?url=https://mova.io/blog/how-to-build-a-travel-app/" onclick="window.open(this.href, &#39;google-plus-share&#39;, &#39;width=490,height=530&#39;);return false;">
+            <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+          </a>
+          <div class="clear"></div>
+        </div>
+
+        <aside class="entry-tags post-tags">
+          <a href="https://mova.io/blog/tag/mobile/">mobile</a> <a href="https://mova.io/blog/tag/app-tag/">app</a> <a href="https://mova.io/blog/tag/how-to-2/">how-to</a> <a href="https://mova.io/blog/tag/estimation/">estimation</a> <a href="https://mova.io/blog/tag/travel/">travel</a> <a href="https://mova.io/blog/tag/booking/">booking</a>
+        </aside>
+
+        <div class="clear"></div>
+
+            <aside class="post-author">
+              <figure class="post-author-avatar avatar">
+                  <img src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/37fe84c5bf6af53063d7794b5625cb3e.png" alt="Kyrylo Savytskyi">
+              </figure>
+              <div class="post-author-bio">
+                <h4 class="post-author-name"><a href="https://mova.io/blog/author/kyrylo/">Kyrylo Savytskyi</a></h4>
+              </div>
+              <div class="clear"></div>
+            </aside>
+
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+<aside class="post-nav">
+	<div class="container">
+    <div class="row">
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/doctor-appointment-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Doctor Appointment App</h2>
+		              <p class="post-nav-excerpt">Everyone knows how difficult it is to make an appointment with a doctor. Developing "find a doctor app" for medical centers, beauty clinics, and dentistry is a good…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/music-based-dating/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/0-1.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">5 Things You Need to Know Before Creating a Music Based Dating App</h2>
+		              <p class="post-nav-excerpt">In the modern world, people have to constantly balance between career, friends and personal life. Unfortunately, there is less time left for the latter. With the growing number of smartphones,…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/how-to-create-messaging-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/1-2.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">What Does it Take to Create a Messaging App Like WhatsApp, Viber or SnapChat</h2>
+		              <p class="post-nav-excerpt">Recently, the popularity of messaging applications has grown. So, how to make a messaging app Like WhatsApp, Viber, SnapChat? In this article, we will analyze the process of creating a…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/right-tech-stack/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/cover.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Choosing the Right Tech Stack for your Mobile App</h2>
+		              <p class="post-nav-excerpt">Choosing the Right Tech Stack for Mobile App. How to choose the best technology for mobile app stack? You will get the answer in this article! The most important part…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/grocery-delivery-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/03/c.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">How to Develop a Grocery Delivery App like Big Basket, Grofers</h2>
+		              <p class="post-nav-excerpt">Wondering how to make a grocery delivery app? Do you want to build Big Basket like app as successful as, if you make Grofers like app? If you wish to…</p>
+		            </section>
+		          </a>
+		         </div>
+          	<div class="col-4">
+		          <a href="https://mova.io/blog/ecommerce-mobile-app/">
+		            <section style="padding: 1em; min-height: 12em;">
+		              	<div style="width: 100%; height: 6em; margin-bottom: 0.5em; background: url(&#39;/blog/content/images/2019/02/black-friday-buy-computer-34577.jpg&#39;) no-repeat; background-size: 100%;"></div>
+		              <h2 class="post-nav-title">Why your E-commerce​ Store Needs a Mobile Application</h2>
+		              <p class="post-nav-excerpt">According to Google 2017-2018, 68% of smartphone owners use their devices for mobile shopping app, and 66% of them make purchasing decisions with a smartphone at least once a week.…</p>
+		            </section>
+		          </a>
+		         </div>
+      </div>
+    </div>
+  <div class="clear"></div>
+</aside>
+
+
+
+<main class="content">
+  <article class="post tag-mobile tag-app-tag tag-how-to-2 tag-estimation tag-travel tag-booking">
+    <div class="entry-content inner">
+      <section class="post-commentz" style="margin-top: 6em;">
+        <div id="disqus_thread"><iframe id="dsq-app1811" name="dsq-app1811" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 390px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 640px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 640px !important; max-width: 640px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 640px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 640px !important; max-width: 640px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/saved_resource(2).html"></iframe></div>
+        <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+        this.page.url = "https://mova.io/blog/how-to-build-a-travel-app/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "ghost-5bd6e59cc4e52200015da7a7"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://mova-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </section>
+
+
+
+
+    </div>
+  </article>
+</main>
+
+
+
+
+		<div id="body-class" style="display: none;" class="post-template tag-mobile tag-app-tag tag-how-to-2 tag-estimation tag-travel tag-booking"></div>
+
+		<footer id="footer">
+			<div class="inner">
+			</div>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/script.js.download"></script>
+
+	
+
+	<div style="background-color: #FAFAFA; width: 100%; padding: 10pt; margin-top: 50px;">
+	  <div style="height:100%; max-width: 110rem; width: 85%;" class="grid-container">
+	    <div class="row" style="font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif; font-size: 80%;">
+	      <div class="col-6">
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/">home</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/services">services</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/portfolio">portfolio</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/contacts">contacts</a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://mova.io/sideprojects">side projects</a>
+            </span>
+	        </p>
+	        <p>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://twitter.com/mova_io">
+                <i class="fa fa-twitter"></i>&nbsp;twitter.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.facebook.com/movaio">
+                <i class="fa fa-facebook"></i>&nbsp;facebook.com
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://angel.co/mova-io">
+                <i class="fa fa-angellist"></i>&nbsp;angel.co
+              </a>
+            </span>
+            <span style="padding-right: 15px;">
+              <a class="black" href="https://www.linkedin.com/company/10963550">
+                <i class="fa fa-linkedin"></i>&nbsp;linkedin.com
+              </a>
+            </span>
+          </p>
+
+			    <div class="row">
+			      <div class="col-6">
+              <a href="https://clutch.co/press-releases/top-business-services-companies-poland-ukraine">
+                <img style="width:180px;" class="portfolio-image" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/clutch2018.png" alt="Clutch Best Company 2018">
+              </a>
+            </div>
+
+            <div class="col-6">
+              <div class="clutch-widget" data-url="https://clutch.co" data-widget-type="2" data-height="50" data-clutchcompany-id="78685"><iframe id="iframe-0.7565491664407424" frameborder="0" width="100%" height="50px" scrolling="no" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/2.html" style="display: block;"></iframe></div>
+            </div>
+          </div>
+	      </div>
+	      <div class="col-6">
+	        <p>
+	          <a class="logo black" href="http://mova.io/" style="font-weight: 900;">mova.io</a> is a team of professional software developers who build custom mobile and web applications that help your business grow.
+	        </p>
+	        ©2018 All rights reserved.
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+  <script id="dsq-count-scr" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/count.js.download" async=""></script>
+
+
+<script type="text/javascript" id="">document.addEventListener("copy",function(a){selected_text=window.getSelection().toString().replace("\n"," ");l=selected_text.length;50<l&&(selected_text=selected_text.substring(0,20)+" ... "+selected_text.substring(l-20,l));dataLayer.push({selected_text:selected_text,event:"copy"})});</script><iframe style="display: none;" src="./How To Build a Travel App Like Priceline, Expedia, Airbnb - mova.io_files/saved_resource(3).html"></iframe><div id="eJOY__extension_root" style="all: unset;"></div></body></html>
